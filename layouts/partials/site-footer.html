@@ -1,0 +1,23 @@
+<footer id="site-footer">
+  <div class="container">
+    <div class="brand">
+      <a class="footer-brand" href="{{.Site.BaseURL}}">
+        <img src="{{.Site.BaseURL}}/logo.svg" class="logo invert" alt="Logo"/>
+      </a>
+      <p class="footer-info-text">
+        {{ i18n "footer-info-text" }}
+      </p>
+      
+      {{ partial "social.html" . }}
+      
+    </div>
+    <aside>
+      {{ partial "footer-links.html" . }}
+    </aside>
+    <row>
+      <p>{{ i18n "footer-cpr" }}</p>
+    </row>
+    
+  </div>
+  
+</footer>

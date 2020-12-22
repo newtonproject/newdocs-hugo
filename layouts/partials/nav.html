@@ -1,0 +1,46 @@
+<nav id="navbar" class="">
+  <div class="container">
+
+    <input type="checkbox" id="navbar-check" />
+
+    <div class="header brand">
+
+      <label for="navbar-check" class="toggle">
+        <svg class='icon'>
+          <use xlink:href='/icons/bootstrap-icons.svg#filter-left'/>
+        </svg>
+      </label>
+
+      <a href="{{ .Site.BaseURL | relLangURL }}">
+        {{- with .Site.Params.NewDocsLogo -}}
+        <img src="{{ . | relURL }}" alt="Logo"  class="logo invertable" />
+        {{- end -}}
+        <span style="display: none;">{{ .Site.Title }}</span>
+      </a>
+
+      <label class="toggle transparent" color="none">
+        <svg class='icon'>
+          <use xlink:href='/icons/bootstrap-icons.svg#emoji-sunglasses'/>
+        </svg>
+      </label>
+    </div>
+
+
+    <div id="navbar-collapse">
+
+      <ul class="navbar-nav">
+        {{ partial "inject/menu-before" . }}
+        {{ partial "menu-navbar" . }}
+        {{ if .Site.IsMultiLingual }}
+          {{ partial "languages" . }}
+        {{ end }}
+      </ul>
+
+      {{ partial "search" . }}
+
+    </div>
+    
+  </div>
+</nav>
+
+

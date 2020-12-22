@@ -1,0 +1,279 @@
+// Used in layout
+$padding-1: 1px !default;
+$padding-4: 0.25rem !default;
+$padding-8: 0.5rem !default;
+$padding-16: 1rem !default;
+$padding-32: 2rem !default;
+
+$as-1: 1px !default;
+$as-xxs: 0.2rem !default;
+$as-xs: 0.5rem !default;
+$as-sm: 0.75rem !default;
+$as-md: 1rem !default;
+$as-lg: 2rem !default;
+$as-xl: 3rem !default;
+
+$font-size-base: 16px !default;
+$font-size-12: 0.75rem !default;
+$font-size-14: 0.875rem !default;
+$font-size-16: 1rem !default;
+
+$border-radius: $as-xs !default;
+
+$body-font-weight: normal !default;
+
+$body-min-width: 20rem !default;
+$container-max-width: 78rem !default;
+
+$header-height: 3.5rem !default;
+$aside-width: 14rem !default;
+
+$mobile-breakpoint: $aside-width + $body-min-width * 1.2 + $aside-width !default;
+
+$navbar-item-height: $as-lg + $as-xs !default;
+
+$hint-colors: (
+  info: #6bf,
+  warning: #fd6,
+  danger: #f66,
+) !default;
+
+// Color
+$color-primary: #15202b;
+$color-primary-deep: #0A0F15;
+$color-secondary: #3E4C56;
+$color-deep: #27323B;
+$color-light: #D7E2ED;
+$color-lightest: hsl(220, 43%, 97%);
+$color-accent: #11A1F1;
+$color-accent-lighter: #41B4F4;
+$color-accent-deeper: #1184C5;
+$color-accent-2: #20C5A0;
+$color-accent-2-lighter: #36CAA9;
+$color-accent-2-deeper: #179177;
+$color-bg: #fbfafc;
+$color-text: #000000;
+$color-success: #1f2221;
+$color-warning: #FF9500;
+$color-error: #FF5949;
+$color-info: #B1BAC1;
+$color-green: #20C5A0;
+$color-blue: #11A1F1;
+$color-red: #FF5949;
+$color-orange: #FF9500;
+
+// Themes
+@mixin theme-light {
+  // Main Color
+  --body-background: white;
+  --body-content: black;
+  --main-content: black;
+  --main-content-invert: white;
+  --main-body: var(--main-content-invert); 
+  --primary: #15202b;
+  --on-primary: var(--main-content-invert);
+  --secondary: #3E4C56;
+  --on-secondary: var(--main-content-invert);
+  --accent: #11A1F1;
+  --accent-hover: #{$color-accent-deeper};
+  --on-accent: var(--main-content-invert);
+  --accent-2: #20C5A0;
+  --on-accent-2: var(--main-content-invert);
+  --secondary-bg: #{$color-lightest};
+
+  --fbg-100: rgba(215, 226, 237, 0.2);
+  --fbg-200: rgba(215, 226, 237, 0.4);
+  --fbg-300: rgba(215, 226, 237, 0.6);
+  --fbg-400: rgba(215, 226, 237, 0.8);
+  --fbg-500: rgba(215, 226, 237, 1);
+
+  // Theme Color
+  --color-link: var(--accent);
+  --color-visited-link: var(--accent);
+  --highlight-neutral: black;
+  --highlight-neutral-rgb: 22, 33, 44;
+
+  // Navbar
+  --navbar-bg: rgba(255,255,255,0.9);
+
+  // Named Color
+  --hint-color-green: #20C5A0;
+  --hint-color-blue: #11A1F1;
+  --hint-color-red: #FF5949;
+  --hint-color-orange: #FF9500;
+  --gray-100: rgba(0, 0, 0, 0.1);
+  --gray-200: rgba(0, 0, 0, 0.2);
+  --gray-300: rgba(0, 0, 0, 0.3);
+  --gray-500: rgba(0, 0, 0, 0.5);
+  // Hint Color
+  --hint-color-info: #6bf;
+  --hint-color-danger: var(--hint-color-red);
+  --hint-color-success: var(--hint-color-green);
+  --hint-color-warning: var(--hint-color-orange);
+  --hint-color-error: var(--hint-color-red);
+  // Tools
+  --icon-filter: none;
+  --pre-bg: #{$color-light};
+  --sidebar-toc-bg: #{$color-lightest};
+  --footer-bg: #{$color-primary};
+  --footer-content: white;
+
+  --search-bg: rgba(0,0,0,0.05);
+}
+
+@mixin theme-dark {
+  // Main Color
+  --main-content: black;
+  --main-content-invert: white;
+  --main-body: var(--main-content-invert); 
+  --primary: #15202b;
+  --on-primary: var(--main-content-invert);
+  --secondary: #3E4C56;
+  --on-secondary: var(--main-content-invert);
+  --accent: #11A1F1;
+  --accent-hover: #{$color-accent-lighter};
+  --on-accent: var(--main-content-invert);
+  --accent-2: #20C5A0;
+  --on-accent-2: var(--main-content-invert);
+  --secondary-bg: #{$color-primary-deep};
+
+  --fbg-100: rgba(39, 50, 59, 0.25);
+  --fbg-200: rgba(39, 50, 59, 0.5);
+  --fbg-300: rgba(39, 50, 59, 0.7);
+  --fbg-400: rgba(39, 50, 59, 0.85);
+  --fbg-500: rgba(39, 50, 59, 1);
+
+  // Theme Color
+  --body-background: black;
+  --body-content: #{$color-light};
+  --color-link: var(--accent);
+  --color-visited-link: var(--accent);
+  --highlight-neutral: white;
+  --highlight-neutral-rgb: 255, 255, 255;
+
+  // Navbar
+  --navbar-bg: rgba(0,0,0,0.7);
+
+  // Named Color
+  --hint-color-green: #20C5A0;
+  --hint-color-blue: #11A1F1;
+  --hint-color-red: #FF5949;
+  --hint-color-orange: #FF9500;
+  --gray-100: rgba(255, 255, 255, 0.1);
+  --gray-200: rgba(255, 255, 255, 0.2);
+  --gray-300: rgba(255, 255, 255, 0.3);
+  --gray-500: rgba(255, 255, 255, 0.5);
+  // Hint Color
+  --hint-color-info: #6bf;
+  --hint-color-danger: var(--hint-color-red)
+  --hint-color-success: var(--hint-color-green);
+  --hint-color-warning: var(--hint-color-orange);
+  --hint-color-error: var(--hint-color-red);
+  // Tools
+  --icon-filter: brightness(0) invert(1);
+  --pre-bg: #{$color-deep};
+  --sidebar-toc-bg: #0A0F15;
+  --footer-bg: #{$color-primary};
+  --footer-content: white;
+
+  --search-bg: rgba(255,255,255,0.05);
+}
+
+// Has bug parsing css variable, should be fix in future or find another way
+// @mixin bg-opacity($color, $opacity) {
+//   background: $color; /* The Fallback */
+//   background: rgba($color, $opacity);
+// }
+
+.rounded {
+  border-radius: $as-md;
+  &-xxs {
+    border-radius: $as-xxs;
+  }
+  &-xs {
+    border-radius: $as-xs;
+  }
+  &-sm {
+    border-radius: $as-sm;
+  }
+  &-md {
+    border-radius: $as-md;
+  }
+  &-lg {
+    border-radius: $as-lg;
+  }
+  &-xl {
+    border-radius: $as-xl;
+  }
+  &-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &-bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &-circle {
+    border-radius: 50%;
+  }
+  &-pill {
+    border-radius: 100rem;
+  }
+}
+
+.highlight-neutral {
+  background-color: rgba(var(--highlight-neutral-rgb), 0.1);
+  &:hover {
+    background-color: rgba(var(--highlight-neutral-rgb), 0.1);
+  }
+}
+
+.button-highlight-neutral {
+  background-color: none;
+  &:hover {
+    background-color: var(--fbg-300);
+  }
+}
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+}
+
+
+// Grayscale
+$white: #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+}
+
+.box-shadow {
+  box-shadow: 0px $as-xxs $as-sm 0px rgba(21, 53, 80, 0.1);
+}
+
+.transition-color {
+  transition: color 0.2s linear;
+  transition: background-color 0.2s linear;
+}

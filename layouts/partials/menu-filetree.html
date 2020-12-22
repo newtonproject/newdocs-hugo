@@ -1,0 +1,46 @@
+{{ $NewDocsSection := default "docs" .Site.Params.NewDocsSection  }}
+{{ if eq $NewDocsSection "*" }}
+  {{ $NewDocsSection = "/" }}{{/* Backward compatibility */}}
+{{ end }}
+
+{{ with .Site.GetPage $NewDocsSection }}
+  {{ template "newdocs-section-children" (dict "Section" . "CurrentPage" $) }}
+{{ end }}
+
+{{ define "newdocs-section-children" }}{{/* (dict "Section" .Section "CurrentPage" .CurrentPage) */}}
+  <ul>
+    {{ range (where .Section.Pages "Params.NewDocsHidden" "ne" true) }}
+      {{ if .IsSection }}
+        <li {{- if .Params.NewDocsFlatSection }} class="newdocs-section-flat" {{ end -}}>
+          {{ template "newdocs-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+          {{ template "newdocs-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ else if and .IsPage .Content }}
+        <li>
+          {{ template "newdocs-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ define "newdocs-page-link" }}{{/* (dict "Page" .Page "CurrentPage" .CurrentPage) */}}
+  {{ $current := eq .CurrentPage .Page }}
+  {{ $ancestor := .Page.IsAncestor .CurrentPage }}
+
+  {{ if .Page.Params.NewDocsCollapseSection }}
+    <input type="checkbox" id="section-{{ md5 .Page }}" class="toggle" {{ if or $current $ancestor }}checked{{ end }} />
+    <label for="section-{{ md5 .Page }}" class="flex justify-between">
+      <a {{ if .Page.Content }}href="{{ .Page.Permalink }}"{{ end }} class="{{ if $current }}active{{ end }}">
+        {{- partial "title" .Page -}}
+      </a>
+      <span>▾</span>
+    </label>
+  {{ else if .Page.Content }}
+    <a href="{{ .Page.Permalink }}" class="{{ if $current }} active{{ end }}">
+      {{- partial "title" .Page -}}
+    </a>
+  {{ else }}
+    <span>{{- partial "title" .Page -}}</span>
+  {{ end }}
+{{ end }}
