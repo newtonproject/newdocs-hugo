@@ -338,7 +338,7 @@ main .container {
   padding: 0;
   // background: var(--primary);
   @media (min-width: $mobile-breakpoint) { 
-    padding: $padding-16;
+    padding: $as-sm;
    }
 }
 
@@ -525,4 +525,32 @@ footer#site-footer {
 
 .transparent {
   opacity: 0;
+}
+
+#breadcrumb {
+  padding: $as-sm $as-sm 0 $as-sm;
+  @media (max-width: $mobile-breakpoint) {
+    padding: $as-md 0 0 0;
+  }
+  span {
+    @media (max-width: $mobile-breakpoint) {
+      font-size: $font-size-12;
+    }
+    &:after {
+      content: " > ";
+      opacity: 0.5;
+    }
+    &:last-child::after {
+      content: "";
+    }
+    &.active a {
+      color: var(--body-content);
+      opacity: 0.75;
+    }
+    &:hover a {
+      text-decoration: underline;
+      opacity: unset;
+    }
+  }
+  overflow-x: scroll;
 }
