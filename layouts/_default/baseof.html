@@ -10,8 +10,13 @@
   <input type="checkbox" class="hidden toggle" id="menu-control" />
     
   {{ template "nav" . }} 
-    
+  
   <main class="">
+
+    <div class="container">
+      {{ partial "breadcrumb" . }}
+    </div>
+    
     <div class="container">
 
       {{ template "aside-a" . }}
