@@ -1,0 +1,24 @@
+<div class="flex flex-wrap justify-between">
+{{ if .Site.IsMultiLingual }}
+  {{ partial "languages" . }}
+{{ end }}
+
+{{ if and .GitInfo .Site.Params.NewDocsRepo }}
+  <div>
+    {{- $date := partial "date" (dict "Date" .GitInfo.AuthorDate.Local "Format" .Site.Params.NewDocsDateFormat) -}}
+    <a class="flex align-center" href="{{ .Site.Params.NewDocsRepo }}/commit/{{ .GitInfo.Hash }}" title='{{ i18n "Last modified by" }} {{ .GitInfo.AuthorName }} | {{ $date }}' target="_blank" rel="noopener">
+      <img src="{{ "svg/calendar.svg" | relURL }}" class="newdocs-icon" alt="Calendar" />
+      <span>{{ $date }}</span>
+    </a>
+  </div>
+{{ end }}
+
+{{ if and .File .Site.Params.NewDocsRepo .Site.Params.NewDocsEditPath }}
+  <div>
+    <a class="flex align-center" href="{{ .Site.Params.NewDocsRepo }}/{{ .Site.Params.NewDocsEditPath }}/{{ .Site.Params.contentDir }}/{{ replace .File.Path "\\" "/" }}" target="_blank" rel="noopener">
+      <img src="{{ "svg/edit.svg" | relURL }}" class="newdocs-icon" alt="Edit" />
+      <span>{{ i18n "Edit this page" }}</span>
+    </a>
+  </div>
+{{ end }}
+</div>

@@ -1,0 +1,38 @@
+- id: Search
+  translation: 搜索
+
+- id: Edit this page
+  translation: 编辑本页
+
+- id: Last modified by
+  translation: 最后修改者
+
+- id: Last modified on
+  translation: 最后修改于
+
+- id: Expand
+  translation: 展开
+
+- id: Page Not Found
+  translation: 页面未找到
+
+- id: Back to
+  translation: 返回
+
+- id: page-toc
+  translation: 本页内容
+
+- id: footer-info-text
+  translation: NewDocs Theme
+
+- id: footer-cpr
+  translation: © 2020 NewDocs 和其他贡献者
+
+- id: newdocsSearchConfig
+  translation: |
+    {
+      encode: false,
+      tokenize: function(str) {
+        return str.replace(/[\x00-\x7F]/g, '').split('');
+      }
+    }

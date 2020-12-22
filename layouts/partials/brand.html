@@ -1,0 +1,8 @@
+<h2 class="newdocs-brand">
+  <a href="{{ .Site.BaseURL | relLangURL }}">
+    {{- with .Site.Params.NewDocsLogo -}}
+    <img src="{{ . | relURL }}" alt="Logo" />
+    {{- end -}}
+    <span>{{ .Site.Title }}</span>
+  </a>
+</h2>

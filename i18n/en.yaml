@@ -1,0 +1,44 @@
+- id: Search
+  translation: Search
+
+- id: Edit this page
+  translation: Edit this page
+
+- id: Last modified by
+  translation: Last modified by
+
+- id: Last modified on
+  translation: Last modified on
+
+- id: Expand
+  translation: Expand
+
+- id: Page Not Found
+  translation: Page Not Found
+
+- id: Back to
+  translation: Back to
+
+- id: page-toc
+  translation: On This Page
+
+- id: footer-info-text
+  translation: NewDocs
+
+- id: footer-cpr
+  translation: © 2020 NewDocs & Other Contributors
+
+- id: footer-title
+  translation: Link Title
+
+- id: footer-link1-title
+  translation: Link 1
+
+- id: footer-link2-title
+  translation: Link 2
+
+- id: footer-link3-title
+  translation: Link 3
+
+- id: newdocsSearchConfig
+  translation: '{ cache: true }'

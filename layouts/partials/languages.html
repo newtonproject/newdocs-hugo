@@ -1,0 +1,24 @@
+<!-- Merge home and current page translations -->
+{{ $translations := dict }}
+{{ range .Site.Home.AllTranslations }}
+  {{ $translations = merge $translations (dict .Language.Lang .) }}
+{{ end }}
+{{ range .Translations }}
+  {{ $translations = merge $translations (dict .Language.Lang .) }}
+{{ end }}
+
+<li class="nav-item dropdown">
+  <a href="#" style="font-size: large;">
+    <i class="fas fa-language"></i>
+  </a>
+  <ul class="dropdown-menu">
+    {{ range .Site.Languages }}{{ with index $translations .Lang }}
+    <li class="{{ if (eq $.Site.Language .Language) }}active{{ end }} nav-item">
+      <a href="{{ .Permalink }}">
+        {{ .Language.LanguageName }}
+      </a>
+    </li>
+    {{ end }}{{ end }}
+  </ul>
+  
+</li> 

@@ -1,0 +1,13 @@
+<div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="{{ "svg/menu.svg" | relURL }}" class="newdocs-icon" alt="Menu" />
+  </label>
+
+  <strong>{{ partial "title" . }}</strong>
+
+  <label for="toc-control">
+    {{ if default true (default .Site.Params.NewDocsToC .Params.NewDocsToC) }}
+    <img src="{{ "svg/toc.svg" | relURL }}" class="newdocs-icon" alt="Table of Contents" />
+    {{ end }}
+  </label>
+</div>

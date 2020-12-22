@@ -1,0 +1,31 @@
+@import "defaults";
+@import "custom_variables";
+// @import "{{ default "auto" .Site.Params.NewDocsTheme }}";
+
+:root {
+  @include theme-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-dark;
+  }
+}
+
+@import "normalize";
+@import "utils";
+@import "main";
+@import "fonts";
+@import "fa/fontawesome.scss";
+@import "fa/solid.scss";
+@import "fa/brands.scss";
+@import "fa/regular.scss";
+@import "print";
+
+@import "markdown";
+@import "shortcodes";
+// @import "numbered";
+@import "scrollbars";
+
+// Custom defined styles
+@import "custom_style";

@@ -1,0 +1,13 @@
+:root {
+  @include theme-light;
+}
+
+// .dark:root {
+//   @include theme-dark;
+// }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-dark;
+  }
+}
