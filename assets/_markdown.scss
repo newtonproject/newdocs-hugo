@@ -7,6 +7,13 @@
     margin-top: 0;
   }
 
+  > h1, > h2, > h3, > h4, > h5, >h6 {
+    border-bottom: solid 1px var(--body-background);
+    &:hover {
+      border-color: var(--fbg-300);
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -17,6 +24,7 @@
     line-height: 1;
     margin-top: 1.5em;
     margin-bottom: $padding-16;
+    padding-bottom: 0.5rem;
 
     a.anchor {
       opacity: 0;
@@ -135,7 +143,9 @@
       overflow: hidden;
       tr {
         background: var(--fbg-200);
-        font-weight: 600;
+        &, strong {
+          font-weight: 600;
+        }
       }
     }
 
