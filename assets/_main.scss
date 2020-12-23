@@ -4,6 +4,13 @@ html {
   touch-action: manipulation;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 body {
   min-width: $body-min-width;
   color: var(--body-content);
@@ -16,9 +23,11 @@ body {
   box-sizing: border-box;
 
   * {
-    @extend .transition-color;
+    @extend .transition;
   }
 }
+
+
 
 h1,
 h2,
