@@ -543,33 +543,40 @@ footer#site-footer {
 
 #breadcrumb {
   padding: $as-sm $as-sm 0 $as-sm;
-  overflow-x: scroll;
-  
+  width: 100%;
   @media (max-width: $mobile-breakpoint) {
     padding: $as-md 0 0 0;
-  }
-  * {
-    @extend .transition-color;
   }
   span {
     @media (max-width: $mobile-breakpoint) {
       font-size: $font-size-12;
     }
-    &:after {
-      content: " > ";
-      opacity: 0.5;
+    a {
+      color: var(--body-content);
+      opacity: 0.75;
     }
-    &:last-child::after {
+    &:before {
+      content: "/";
+      opacity: 0.2;
+      margin: auto $as-xxs;
+    }
+    &:first-child::before {
       content: "";
+      margin: unset;
     }
     &.active a {
-      color: var(--body-content);
       opacity: 0.5;
     }
     &:hover a {
       text-decoration: underline;
       opacity: unset;
     }
+    &:hover::before {
+      opacity: 0.75;
+    }
+  }
+  * a {
+    @extend .transition-color;
   }
   
 }
