@@ -64,8 +64,8 @@
 
     const searchHits = window.newdocsSearchIndex.search(input.value, 10);
     searchHits.forEach(function (page) {
-      const li = element('<li><a href><strong></strong><small></small></a></li>');
-      const a = li.querySelector('a'), title = li.querySelector('strong'), small = li.querySelector('small');
+      const li = element('<li><a href><h4></h4><small></small></a></li>');
+      const a = li.querySelector('a'), title = li.querySelector('h4'), small = li.querySelector('small');
 
       a.href = page.href;
       title.textContent = page.title;
@@ -82,7 +82,7 @@
   function loadScript(src, callback) {
     const script = document.createElement('script');
     script.defer = true;
-    script.async = false;
+    script.async = true;
     script.src = src;
     script.onload = callback;
 
