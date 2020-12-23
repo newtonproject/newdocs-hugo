@@ -68,6 +68,108 @@ input.toggle {
   clear: both;
 }
 
+.rounded {
+  border-radius: $as-md;
+  &-xxs {
+    border-radius: $as-xxs;
+  }
+  &-xs {
+    border-radius: $as-xs;
+  }
+  &-sm {
+    border-radius: $as-sm;
+  }
+  &-md {
+    border-radius: $as-md;
+  }
+  &-lg {
+    border-radius: $as-lg;
+  }
+  &-xl {
+    border-radius: $as-xl;
+  }
+  &-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &-bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &-circle {
+    border-radius: 50%;
+  }
+  &-pill {
+    border-radius: 100rem;
+  }
+}
+
+.highlight-neutral {
+  background-color: rgba(var(--highlight-neutral-rgb), 0.1);
+  &:hover {
+    background-color: rgba(var(--highlight-neutral-rgb), 0.1);
+  }
+}
+
+.button-highlight-neutral {
+  background-color: none;
+  &:hover {
+    background-color: var(--fbg-300);
+  }
+}
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+}
+
+.box-shadow {
+  box-shadow: 0px $as-xxs $as-sm 0px rgba(21, 53, 80, 0.1);
+  @media (prefers-color-scheme: dark) {
+    box-shadow: none;
+  }
+}
+
+.transition-unset {
+  transition: unset;
+  -webkit-transition: unset;
+}
+
+.transition {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+
+.transition-color {
+  transition: color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(#{$as-md});
+  -webkit-backdrop-filter: blur(#{$as-md});
+}
+.backdrop-blur-lg {
+  backdrop-filter: blur(#{$as-lg});
+  -webkit-backdrop-filter: blur(#{$as-lg});
+}
+
+.transparent {
+  opacity: 0;
+}
+
+
 @mixin spin($duration) {
   animation: spin $duration ease infinite;
   @keyframes spin {
@@ -102,6 +204,7 @@ input.toggle {
 @mixin invertable {
   filter: var(--icon-filter);
 }
+
 .invert {
   filter: brightness(0) invert(1)
 }

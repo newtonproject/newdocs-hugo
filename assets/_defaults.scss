@@ -128,7 +128,7 @@ $color-orange: #FF9500;
   --main-body: var(--main-content-invert); 
   --primary: #15202b;
   --on-primary: var(--main-content-invert);
-  --secondary: #3E4C56;
+  --secondary: #525a5f;
   --on-secondary: var(--main-content-invert);
   --accent: #11A1F1;
   --accent-hover: #{$color-accent-lighter};
@@ -144,7 +144,7 @@ $color-orange: #FF9500;
   --fbg-500: rgba(39, 50, 59, 1);
 
   // Theme Color
-  --body-background: black;
+  --body-background: #0c0c0c;
   --body-content: #{$color-light};
   --color-link: var(--accent);
   --color-visited-link: var(--accent);
@@ -152,7 +152,7 @@ $color-orange: #FF9500;
   --highlight-neutral-rgb: 255, 255, 255;
 
   // Navbar
-  --navbar-bg: rgba(0,0,0,0.7);
+  --navbar-bg: rgba(0,0,0,0.65);
 
   // Named Color
   --hint-color-green: #20C5A0;
@@ -185,69 +185,6 @@ $color-orange: #FF9500;
 //   background: rgba($color, $opacity);
 // }
 
-.rounded {
-  border-radius: $as-md;
-  &-xxs {
-    border-radius: $as-xxs;
-  }
-  &-xs {
-    border-radius: $as-xs;
-  }
-  &-sm {
-    border-radius: $as-sm;
-  }
-  &-md {
-    border-radius: $as-md;
-  }
-  &-lg {
-    border-radius: $as-lg;
-  }
-  &-xl {
-    border-radius: $as-xl;
-  }
-  &-top {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  &-bottom {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  &-left {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  &-right {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  &-circle {
-    border-radius: 50%;
-  }
-  &-pill {
-    border-radius: 100rem;
-  }
-}
-
-.highlight-neutral {
-  background-color: rgba(var(--highlight-neutral-rgb), 0.1);
-  &:hover {
-    background-color: rgba(var(--highlight-neutral-rgb), 0.1);
-  }
-}
-
-.button-highlight-neutral {
-  background-color: none;
-  &:hover {
-    background-color: var(--fbg-300);
-  }
-}
-
-svg.icon {
-  width: 1em;
-  height: 1em;
-  display: inline;
-}
 
 
 // Grayscale
@@ -262,18 +199,3 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
-
-svg.icon {
-  width: 1em;
-  height: 1em;
-  display: inline;
-}
-
-.box-shadow {
-  box-shadow: 0px $as-xxs $as-sm 0px rgba(21, 53, 80, 0.1);
-}
-
-.transition-color {
-  transition: color 0.2s linear;
-  transition: background-color 0.2s linear;
-}

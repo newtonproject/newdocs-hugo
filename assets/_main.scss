@@ -14,11 +14,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-}
 
-// body main > * {
-//   transition: all 0.2s;
-// }
+  * {
+    @extend .transition-color;
+  }
+}
 
 h1,
 h2,
@@ -32,10 +32,7 @@ a, a:link {
   text-decoration: none;
   color: var(--color-link);
   position: relative;
-  // top: 0;
-  // -webkit-transition: all 0.2s ease-in-out;
-  @extend .transition-color;
-
+  @extend .transition;
   
 }
 a:hover {
@@ -45,10 +42,6 @@ a:hover {
 a, a:hover, a:active, a:focus {
   text-decoration: none;
   outline: none;
-}
-
-a:hover, a:active {
-  // top: -$as-xxs;
 }
 
 #navbar a:hover,footer#site-footer a:hover {
@@ -102,17 +95,19 @@ main {
   }
 }
 
-
 // Site Navbar
 #navbar {
   position: fixed;
   width: 100%;
   background: var(--navbar-bg);
-  backdrop-filter: blur(#{$as-md});
-  -webkit-backdrop-filter: blur(#{$as-md});
   font-size: $font-size-14;
   z-index: 100;
   @extend .box-shadow;
+  @extend .backdrop-blur;
+  @media (max-width: $mobile-breakpoint) {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
 
   .container {
     display: flex;
@@ -206,8 +201,9 @@ main {
       @extend .rounded-sm;
     }
     li.nav-item.active > a {
-      // text-decoration: underline;
-      // background: var(--fbg-200);
+      &:before {
+        content: " > ";
+      }
     }
     li.dropdown {
       display: inline-block;
@@ -217,9 +213,8 @@ main {
       display: none;
       position: absolute;
       z-index: 1;
-      background: var(--navbar-bg);
-      backdrop-filter: blur(#{$as-md});
-      -webkit-backdrop-filter: blur(#{$as-md});
+      background: var(--fbg-100);
+      border: solid 1px var(--fbg-200);
       min-width: 10rem;
       padding: $as-sm;
       left: 50%;
@@ -227,6 +222,10 @@ main {
       transform: translate(-50%, 0);
       @extend .box-shadow;
       @extend .rounded-sm;
+      @extend .backdrop-blur;
+      li.nav-item a {
+        @extend .rounded-xs;
+      }
       @media (max-width: $mobile-breakpoint) {
         position: relative;
         padding-left: $as-sm;
@@ -251,7 +250,6 @@ main {
     @media (max-width: $mobile-breakpoint) {
       padding: 8px 0;
       margin: 8px 0;
-      // border: solid 1px grey;
       border-left: none;
       border-right: none;
       flex-direction: column;
@@ -259,67 +257,90 @@ main {
     }
   }
 
+  #navbar-search-input {
+    margin: 0;
+    padding: 0 $as-md;
+    border: none;
+    min-height: $navbar-item-height;
+    color: var(--body-content);
+    background: var(--fbg-200);
+    outline: none;
+    @extend .transition;
+    @extend .rounded-sm;
+    @media (min-width: $mobile-breakpoint) {
+      width: $aside-width/2;
+      &:focus {
+        width: $aside-width * 1.2;
+      }
+    }
+    ~ * #navbar-search-results { 
+      display: block;
+    }
+    &:focus {
+      background: var(--fbg-400);
+      & ~ ul.navbar-nav {
+        display: none;
+      }
+      ~ * #navbar-search-results { 
+        display: block;
+      }
+    }
+  }
+
   .search-results {
     position: relative;
     // background: #{$color-deep};
-    background: var(--secondary-bg);
-    z-index: 100;
-    max-height: 50vh;
+    background: var(--navbar-bg);
+    z-index: 50;
+    max-height: 70vh;
     width: 100%;
     overflow-y: auto;
-    margin-top: $as-xs;
-    @extend .rounded-xs;
     @extend .box-shadow;
+    @extend .rounded-xs;
+    @extend .backdrop-blur;
     @media (min-width: $mobile-breakpoint) {
       position: absolute;
-      top: $navbar-item-height;
+      top: #{$navbar-item-height + $as-sm};
       right: 0;
-      width: 130%;
+      min-width: $aside-width * 1.2 + $as-md + $as-md;
+    }
+    @media (max-width: $mobile-breakpoint) {
+      margin: $as-xxs $as-xs;
+      width: unset;
     }
     
   }
 
   #navbar-search-results {
     @include ul-reset;
-    position: relative;
-    // padding: $as-xs;
 
     li {
-      padding: $as-xs;
-      list-style: none;
       line-height: 1.5em;
-      @extend .rounded-xs;
-      &:hover {
-        // background: #{$color-secondary};
-        background: var(--fbg-300);
+      margin: $as-xs;
+      h4 {
+        font-weight: 600;
+        margin: 0;
+      }
+      small {
+        color: var(--secondary);
+        opacity: 0.75;
       }
       a {
         display: block;
+        padding: $as-xs;
+        background: var(--fbg-100);
+        @extend .backdrop-blur;
+        @extend .rounded-xs;
+        &:hover {
+          background: var(--fbg-300);
+          h4 {
+            color: var(--color-link);
+          }
+          small {
+            opacity: unset;
+          }
+        }
       }
-      strong {
-        font-weight: 600;
-      }
-      small {
-        display: block;
-        color: var(--secondary);
-      }
-    }
-  }
-
-
-  #navbar-search-input {
-    margin: 0;
-    padding: 0 $as-md;
-    border: none;
-    height: $navbar-item-height;
-    border-radius: $as-sm;
-    color: var(--body-content);
-    background: var(--fbg-200);
-    @media (min-width: $mobile-breakpoint) {
-      width: $aside-width;
-    }
-    &:focus {
-      background: var(--fbg-400);
     }
   }
 
@@ -401,9 +422,6 @@ section.toc, section.git-info {
 #toc-control {
   label#toc-check {
     display: block;
-  }
-  nav#TableOfContents {
-    transition: all 0.3s;
   }
   @media (max-width: $mobile-breakpoint) {
     &:not(:checked) ~ nav#TableOfContents {
@@ -523,14 +541,15 @@ footer#site-footer {
   
 }
 
-.transparent {
-  opacity: 0;
-}
-
 #breadcrumb {
   padding: $as-sm $as-sm 0 $as-sm;
+  overflow-x: scroll;
+  
   @media (max-width: $mobile-breakpoint) {
     padding: $as-md 0 0 0;
+  }
+  * {
+    @extend .transition-color;
   }
   span {
     @media (max-width: $mobile-breakpoint) {
@@ -545,12 +564,12 @@ footer#site-footer {
     }
     &.active a {
       color: var(--body-content);
-      opacity: 0.75;
+      opacity: 0.5;
     }
     &:hover a {
       text-decoration: underline;
       opacity: unset;
     }
   }
-  overflow-x: scroll;
+  
 }
