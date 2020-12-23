@@ -156,6 +156,10 @@ svg.icon {
   -webkit-transition: background-color 0.2s ease-in-out;
 }
 
+.backdrop-blur-unset {
+  backdrop-filter: unset;
+  -webkit-backdrop-filter: unset;
+}
 .backdrop-blur {
   backdrop-filter: blur(#{$as-md});
   -webkit-backdrop-filter: blur(#{$as-md});
@@ -163,6 +167,20 @@ svg.icon {
 .backdrop-blur-lg {
   backdrop-filter: blur(#{$as-lg});
   -webkit-backdrop-filter: blur(#{$as-lg});
+}
+
+.fix-backdrop-blur {
+  @media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    backdrop-filter: unset;
+  }
+}
+
+.popover-border {
+  border: solid 1px var(--fbg-200);
+  &:hover {
+    border-color: var(--fbg-300);
+  }
 }
 
 .transparent {

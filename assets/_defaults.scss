@@ -119,6 +119,7 @@ $color-orange: #FF9500;
   --footer-content: white;
 
   --search-bg: rgba(0,0,0,0.05);
+  --popover-bg: rgba(255,255,255,0.8);
 }
 
 @mixin theme-dark {
@@ -152,7 +153,7 @@ $color-orange: #FF9500;
   --highlight-neutral-rgb: 255, 255, 255;
 
   // Navbar
-  --navbar-bg: rgba(0,0,0,0.65);
+  --navbar-bg: rgba(0,0,0,0.75);
 
   // Named Color
   --hint-color-green: #20C5A0;
@@ -177,6 +178,7 @@ $color-orange: #FF9500;
   --footer-content: white;
 
   --search-bg: rgba(255,255,255,0.05);
+  --popover-bg: rgba(0,0,0,0.5);
 }
 
 // Has bug parsing css variable, should be fix in future or find another way
