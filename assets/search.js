@@ -12,7 +12,9 @@
   }
 
   input.addEventListener('focus', init);
+  input.addEventListener('focus', search);
   input.addEventListener('keyup', search);
+  input.addEventListener('change', search);
 
   document.addEventListener('keypress', focusSearchFieldOnKeyPress);
 
@@ -82,7 +84,7 @@
   function loadScript(src, callback) {
     const script = document.createElement('script');
     script.defer = true;
-    script.async = true;
+    script.async = false;
     script.src = src;
     script.onload = callback;
 
