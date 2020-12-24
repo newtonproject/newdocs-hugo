@@ -23,7 +23,7 @@ body {
   box-sizing: border-box;
 
   * {
-    @extend .transition;
+    @extend .transition-color;
   }
 }
 
@@ -202,13 +202,18 @@ main {
       }
     }
 
+    li.nav-item {
+      @extend .rounded-sm;
+      &:hover {
+        background: var(--fbg-300);
+      }
+    }
+
     li.nav-item a {
       display: flex;
       // line-height: $navbar-item-height;
       line-height: 1rem;
       padding: ($navbar-item-height - 1rem)/2 $as-md;
-      @extend .button-highlight-neutral;
-      @extend .rounded-sm;
     }
     li.nav-item.active > a {
       &:before {
@@ -233,7 +238,7 @@ main {
       @extend .box-shadow;
       @extend .rounded-sm;
       @extend .popover-border;
-      li.nav-item a {
+      li.nav-item {
         @extend .rounded-xs;
       }
       @media (max-width: $mobile-breakpoint) {
@@ -285,7 +290,7 @@ main {
       }
     }
     &:focus {
-      background: var(--fbg-400);
+      background: var(--fbg-300);
       & ~ ul.navbar-nav {
         height: 0;
         overflow: hidden;
