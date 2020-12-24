@@ -14,7 +14,6 @@
   input.addEventListener('focus', init);
   input.addEventListener('focus', search);
   input.addEventListener('keyup', search);
-  input.addEventListener('change', search);
 
   document.addEventListener('keypress', focusSearchFieldOnKeyPress);
 
