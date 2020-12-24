@@ -19,6 +19,12 @@
 - id: Back to
   translation: Back to
 
+- id: prev-page
+  translation: Previous
+
+- id: next-page
+  translation: Next
+
 - id: page-toc
   translation: On This Page
 

@@ -19,6 +19,12 @@
 - id: Back to
   translation: 返回
 
+- id: prev-page
+  translation: 上一篇
+
+- id: next-page
+  translation: 下一篇
+
 - id: page-toc
   translation: 本页内容
 

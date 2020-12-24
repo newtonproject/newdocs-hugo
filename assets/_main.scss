@@ -23,11 +23,9 @@ body {
   box-sizing: border-box;
 
   * {
-    @extend .transition;
+    @extend .transition-color;
   }
 }
-
-
 
 h1,
 h2,
@@ -202,13 +200,18 @@ main {
       }
     }
 
+    li.nav-item {
+      @extend .rounded-sm;
+      &:hover {
+        background: var(--fbg-300);
+      }
+    }
+
     li.nav-item a {
       display: flex;
       // line-height: $navbar-item-height;
       line-height: 1rem;
       padding: ($navbar-item-height - 1rem)/2 $as-md;
-      @extend .button-highlight-neutral;
-      @extend .rounded-sm;
     }
     li.nav-item.active > a {
       &:before {
@@ -233,7 +236,7 @@ main {
       @extend .box-shadow;
       @extend .rounded-sm;
       @extend .popover-border;
-      li.nav-item a {
+      li.nav-item {
         @extend .rounded-xs;
       }
       @media (max-width: $mobile-breakpoint) {
@@ -285,7 +288,7 @@ main {
       }
     }
     &:focus {
-      background: var(--fbg-400);
+      background: var(--fbg-300);
       & ~ ul.navbar-nav {
         height: 0;
         overflow: hidden;
@@ -589,4 +592,49 @@ footer#site-footer {
     @extend .transition-color;
   }
   
+}
+
+#nav-prev-next {
+  margin-top: $as-md;
+  display:flex;
+  flex-direction:row;
+  .previous, .next {
+    flex: 1 1;
+    border: solid 1px var(--fbg-200);
+    padding: $as-sm;
+    @extend .rounded-xs;
+    @media (max-width: $mobile-breakpoint) {
+      padding: $as-xs;
+    }
+    &:hover {
+      background: var(--fbg-200);
+    }
+  }
+  a {
+    margin: 0 $as-xs;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .next {
+    text-align: right;
+  }
+  span {
+    font-size: 0.9em;
+    color: var(--secondary);
+    line-height: 1.7em;
+  }
+  h4 {
+    color: var(--body-content);
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    padding-top: $as-xs;
+  }
+  .link {
+    margin: $as-xxs;
+  }
 }
