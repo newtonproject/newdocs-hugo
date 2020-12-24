@@ -27,8 +27,6 @@ body {
   }
 }
 
-
-
 h1,
 h2,
 h3,
@@ -594,4 +592,49 @@ footer#site-footer {
     @extend .transition-color;
   }
   
+}
+
+#nav-prev-next {
+  margin-top: $as-md;
+  display:flex;
+  flex-direction:row;
+  .previous, .next {
+    flex: 1 1;
+    border: solid 1px var(--fbg-200);
+    padding: $as-sm;
+    @extend .rounded-xs;
+    @media (max-width: $mobile-breakpoint) {
+      padding: $as-xs;
+    }
+    &:hover {
+      background: var(--fbg-200);
+    }
+  }
+  a {
+    margin: 0 $as-xs;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .next {
+    text-align: right;
+  }
+  span {
+    font-size: 0.9em;
+    color: var(--secondary);
+    line-height: 1.7em;
+  }
+  h4 {
+    color: var(--body-content);
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    padding-top: $as-xs;
+  }
+  .link {
+    margin: $as-xxs;
+  }
 }
