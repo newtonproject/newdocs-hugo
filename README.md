@@ -42,21 +42,25 @@ There are many ways to use this Theme, choose which one fits your project:
 
 ## License
 
+[Apache-2.0 License](LICENSE)
+
 ## Thanks To
 
 Other open-source projects used in this Theme:
 
-- [Hugo](https://gohugo.io/)
+- [Hugo](https://gohugo.io/) 
 
-- [FlexSearch.js](https://github.com/nextapps-de/flexsearch)
+- [FlexSearch.js](https://github.com/nextapps-de/flexsearch) by Nextapps GmbH
 
 - [KaTeX](https://katex.org)
 
 - [mermaid](https://github.com/mermaid-js/mermaid)
 
-- [Normalize.css](https://necolas.github.io/normalize.css/)
+- [Normalize.css](https://github.com/necolas/normalize.css/) by Nicolas Gallagher
 
-- [Poppins Fonts](https://github.com/itfoundry/poppins)
+- [Poppins Fonts](https://github.com/itfoundry/poppins) by Indian Type Foundry
+
+- [Source Code Pro Fonts](https://github.com/adobe-fonts/source-code-pro) by Adobe
 
 - [Font Awesome](https://fontawesome.com)
 

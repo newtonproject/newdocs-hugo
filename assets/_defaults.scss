@@ -172,7 +172,7 @@ $color-orange: #FF9500;
   --hint-color-error: var(--hint-color-red);
   // Tools
   --icon-filter: brightness(0) invert(1);
-  --pre-bg: #{$color-deep};
+  --pre-bg: hsl(207, 20%, 12%);
   --sidebar-toc-bg: #0A0F15;
   --footer-bg: #{$color-primary};
   --footer-content: white;
