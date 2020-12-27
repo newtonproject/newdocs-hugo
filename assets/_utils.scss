@@ -150,10 +150,8 @@ svg.icon {
 }
 
 .transition-color {
-  transition: color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .backdrop-blur-unset {

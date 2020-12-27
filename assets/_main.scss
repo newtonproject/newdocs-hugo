@@ -607,7 +607,13 @@ footer#site-footer {
       padding: $as-xs;
     }
     &:hover {
-      background: var(--fbg-200);
+      @extend .box-shadow;
+      span {
+        color: var(--accent-2);
+      }
+      h4 {
+        opacity: unset;
+      }
     }
   }
   a {
@@ -630,6 +636,8 @@ footer#site-footer {
   h4 {
     color: var(--body-content);
     font-size: 1em;
+    font-weight: 500;
+    opacity: 0.75;
     margin: 0;
     padding: 0;
     padding-top: $as-xs;

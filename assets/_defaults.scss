@@ -92,10 +92,6 @@ $color-orange: #FF9500;
   --color-visited-link: var(--accent);
   --highlight-neutral: black;
   --highlight-neutral-rgb: 22, 33, 44;
-
-  // Navbar
-  --navbar-bg: rgba(255,255,255,0.9);
-
   // Named Color
   --hint-color-green: #20C5A0;
   --hint-color-blue: #11A1F1;
@@ -117,9 +113,10 @@ $color-orange: #FF9500;
   --sidebar-toc-bg: #{$color-lightest};
   --footer-bg: #{$color-primary};
   --footer-content: white;
-
+  // With Blur
   --search-bg: rgba(0,0,0,0.05);
   --popover-bg: rgba(255,255,255,0.8);
+  --navbar-bg: rgba(255,255,255,0.85);
 }
 
 @mixin theme-dark {
@@ -151,10 +148,6 @@ $color-orange: #FF9500;
   --color-visited-link: var(--accent);
   --highlight-neutral: white;
   --highlight-neutral-rgb: 255, 255, 255;
-
-  // Navbar
-  --navbar-bg: rgba(0,0,0,0.75);
-
   // Named Color
   --hint-color-green: #20C5A0;
   --hint-color-blue: #11A1F1;
@@ -172,13 +165,14 @@ $color-orange: #FF9500;
   --hint-color-error: var(--hint-color-red);
   // Tools
   --icon-filter: brightness(0) invert(1);
-  --pre-bg: #{$color-deep};
+  --pre-bg: hsl(207, 20%, 12%);
   --sidebar-toc-bg: #0A0F15;
   --footer-bg: #{$color-primary};
   --footer-content: white;
-
+  // With Blur
   --search-bg: rgba(255,255,255,0.05);
-  --popover-bg: rgba(0,0,0,0.5);
+  --popover-bg: rgba(25, 25, 25, 0.8);
+  --navbar-bg: rgba(25, 25, 25, 0.8);
 }
 
 // Has bug parsing css variable, should be fix in future or find another way
