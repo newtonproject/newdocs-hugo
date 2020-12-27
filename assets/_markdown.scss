@@ -141,36 +141,82 @@
     overflow: auto;
     display: block;
     border-spacing: 0;
-    border-collapse: collapse;
     margin-top: $as-lg;
     margin-bottom: $as-lg;
-    
 
     thead {
       
       overflow: hidden;
       tr {
-        background: var(--fbg-200);
+        background: var(--fbg-300);
+        &:hover {
+          background: var(--fbg-300);
+        }
+        
         &, strong, & th {
           font-weight: 500;
+        }
+        th {
+          text-align: left;
         }
       }
     }
 
     tr th,
     tr td {
-      padding: $as-sm;
-      border: 1px solid var(--fbg-300);
-      
+      padding: $as-sm $as-xs ;
+      // border: 1px solid var(--fbg-300);
     }
 
     tr {
-      background: var(--fbg-100);
+      background: var(--body-background);
+      &:hover {
+        background: var(--fbg-100);
+      }
+
+      td {
+        border-bottom: solid 1px var(--fbg-300);
+        &:first-child {
+          border-left: solid 1px var(--fbg-300);
+        }
+        &:last-child {
+          border-right: solid 1px var(--fbg-300);
+        }
+      }
+    }
+
+    tr:first-child {
+      th {
+        border-top: solid 1px var(--fbg-300);
+        &:first-child {
+          border-top-left-radius: $as-xs;
+          border-left: solid 1px var(--fbg-300);
+        }
+        &:last-child {
+          border-top-right-radius: $as-xs;
+          border-right: solid 1px var(--fbg-300);
+        }
+      }
+    }
+    tr:last-child {
+      td {
+        border-bottom: solid 1px var(--fbg-300);
+        &:first-child {
+          border-bottom-left-radius: $as-xs;
+          border-left: solid 1px var(--fbg-300);
+        }
+        &:last-child {
+          border-bottom-right-radius: $as-xs;
+          border-right: solid 1px var(--fbg-300);
+          
+        }
+      }
     }
 
     tr:nth-child(2n) {
-      background: var(--fbg-200);
+      // background: var(--fbg-200);
     }
+
   }
 
   hr {
