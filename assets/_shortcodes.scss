@@ -71,8 +71,11 @@
   .newdocs-hint {
     @each $name, $color in $hint-colors {
       &.#{$name} {
-        border-color: $color;
+        border-color: rgba($color, 0.2);
         background-color: rgba($color, 0.2);
+        & a:link {
+          color: $color;
+        }
       }
     }
   }
