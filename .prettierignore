@@ -13,3 +13,4 @@ layouts/shortcodes/button.html
 layouts/shortcodes/details.html
 layouts/shortcodes/katex.html
 layouts/shortcodes/tabs.html
+layouts/shortcodes/icon.html
