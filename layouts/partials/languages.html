@@ -12,13 +12,16 @@
     <i class="fas fa-language"></i>
   </a>
   <ul class="dropdown-menu">
-    {{ range .Site.Languages }}{{ with index $translations .Lang }}
-    <li class="{{ if (eq $.Site.Language .Language) }}active{{ end }} nav-item">
-      <a href="{{ .Permalink }}">
-        {{ .Language.LanguageName }}
-      </a>
-    </li>
-    {{ end }}{{ end }}
+    {{ range .Site.Languages }}
+      {{ with index $translations .Lang }}
+        <li
+          class="{{ if (eq $.Site.Language .Language) }}active{{ end }} nav-item"
+        >
+          <a href="{{ .Permalink }}">
+            {{ .Language.LanguageName }}
+          </a>
+        </li>
+      {{ end }}
+    {{ end }}
   </ul>
-  
-</li> 
+</li>

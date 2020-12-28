@@ -7,7 +7,12 @@
     margin-top: 0;
   }
 
-  > h1, > h2, > h3, > h4, > h5, >h6 {
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
     border-bottom: solid 1px var(--body-background);
     color: var(--body-content);
     &:hover {
@@ -69,7 +74,11 @@
     }
   }
 
-  p, ul, li, table, code {
+  p,
+  ul,
+  li,
+  table,
+  code {
     & a:hover {
       text-decoration: underline;
     }
@@ -120,8 +129,6 @@
     border-radius: $as-sm;
   }
 
-
-
   blockquote {
     margin: $padding-16 0;
     padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
@@ -144,15 +151,16 @@
     margin-bottom: $as-lg;
 
     thead {
-      
       overflow: hidden;
       tr {
         background: var(--fbg-300);
         &:hover {
           background: var(--fbg-300);
         }
-        
-        &, strong, & th {
+
+        &,
+        strong,
+        & th {
           font-weight: 500;
         }
         th {
@@ -163,7 +171,7 @@
 
     tr th,
     tr td {
-      padding: $as-sm $as-xs ;
+      padding: $as-sm $as-xs;
       // border: 1px solid var(--fbg-300);
     }
 
@@ -207,7 +215,6 @@
         &:last-child {
           border-bottom-right-radius: $as-xs;
           border-right: solid 1px var(--fbg-300);
-          
         }
       }
     }
@@ -215,7 +222,6 @@
     tr:nth-child(2n) {
       // background: var(--fbg-200);
     }
-
   }
 
   hr {
@@ -227,10 +233,20 @@
     width: 60%;
     height: 1px;
     @media (prefers-color-scheme: light) {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+      );
     }
     @media (prefers-color-scheme: dark) {
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+      );
     }
   }
 

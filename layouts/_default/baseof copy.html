@@ -1,46 +1,48 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" dir={{ .Site.Language.LanguageDirection }}>
+<html
+  lang="{{ .Site.Language.Lang }}"
+  dir="{{ .Site.Language.LanguageDirection }}"
+>
+  <head>
+    {{ partial "html-head" . }}
+    {{ partial "inject/head" . }}
+  </head>
 
-<head>
-  {{ partial "html-head" . }}
-  {{ partial "inject/head" . }}
-</head>
+  <body dir="{{ .Site.Language.LanguageDirection }}" class="full">
+    <input type="checkbox" class="hidden toggle" id="menu-control" />
+    <input type="checkbox" class="hidden toggle" id="toc-control" />
+    {{ template "nav" . }}
 
-<body dir={{ .Site.Language.LanguageDirection }} class="full">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-    {{ template "nav" . }} 
-    
-  <main class="">
-    <div class="container">
+    <main class="">
+      <div class="container">
+        <aside class="menu">
+          <section class="menu">
+            {{ template "menu" . }}
+            <!-- Left menu Content -->
+          </section>
+        </aside>
 
-      <aside class="menu">
-        <section class="menu">
-          {{ template "menu" . }} <!-- Left menu Content -->
-        </section>
-      </aside>
-  
-      <div class="page-content">
-        {{ template "main" . }} <!-- Page Content -->
+        <div class="page-content">
+          {{ template "main" . }}
+          <!-- Page Content -->
+        </div>
+
+        <aside>
+          {{ template "git-info" . }}
+          <!-- Git Info -->
+          <section class="toc">
+            {{ template "toc" . }}
+            <!-- Table of Contents -->
+          </section>
+        </aside>
       </div>
-  
-      <aside>
-        {{ template "git-info" . }} <!-- Git Info -->
-        <section class="toc">
-          {{ template "toc" . }} <!-- Table of Contents -->
-        </section>
-      </aside>
+    </main>
 
-      
+    {{ template "site-footer" . }}
+    <!-- Site Footer -->
 
-    </div>
-  </main>
-
-  {{ template "site-footer" . }} <!-- Site Footer -->
-
-  {{ partial "inject/body" . }}
-</body>
-
+    {{ partial "inject/body" . }}
+  </body>
 </html>
 
 <!-- Aris start -->
@@ -59,9 +61,9 @@
   {{ partial "header" . }}
 
   {{ if default true (default .Site.Params.NewDocsToC .Params.NewDocsToC) }}
-  <aside class="hidden clearfix">
-    {{ template "toc" . }}
-  </aside>
+    <aside class="hidden clearfix">
+      {{ template "toc" . }}
+    </aside>
   {{ end }}
 {{ end }}
 
@@ -79,19 +81,18 @@
 
 {{ define "comments" }}
   {{ if and .Content (default true (default .Site.Params.NewDocsComments .Params.NewDocsComments)) }}
-  <div class="newdocs-comments">
-    {{- partial "comments" . -}}
-  </div>
+    <div class="newdocs-comments">
+      {{- partial "comments" . -}}
+    </div>
   {{ end }}
 {{ end }}
 
 {{ define "main" }}
   <article class="markdown">
     <!-- <div class="body"> -->
-      {{- .Content -}}
+    {{- .Content -}}
     <!-- </div> -->
   </article>
-  
 {{ end }}
 
 {{ define "toc" }}

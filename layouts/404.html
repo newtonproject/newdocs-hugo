@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
-
   <head>
     {{ partial "html-head" . }}
     {{ partial "inject/head" . }}
@@ -10,8 +9,8 @@
         text-align: center;
       }
       .not-found h1 {
-        margin: .25em 0 0 0;
-        opacity: .25;
+        margin: 0.25em 0 0 0;
+        opacity: 0.25;
         font-size: 40vmin;
       }
     </style>
@@ -23,14 +22,14 @@
         <h1>404</h1>
         <h2>{{ i18n "Page Not Found" }}</h2>
         <h3>
-          <a href="{{ .Site.Home.RelPermalink }}">{{ i18n "Back to" }} {{ .Site.Title }}</a>
+          <a href="{{ .Site.Home.RelPermalink }}"
+            >{{ i18n "Back to" }} {{ .Site.Title }}</a
+          >
         </h3>
       </div>
     </main>
 
     {{ partial "inject/body" . }}
     {{ template "_internal/google_analytics_async.html" . }}
-    
   </body>
-
 </html>

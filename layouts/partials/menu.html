@@ -1,25 +1,23 @@
 <nav>
-<!-- {{ partial "brand" . }} -->
-<!-- {{ partial "search" . }} -->
+  <!-- {{ partial "brand" . }} -->
+  <!-- {{ partial "search" . }} -->
 
-{{ partial "inject/menu-before" . }}
-{{ partial "menu-hugo" .Site.Menus.before }}
+  {{ partial "inject/menu-before" . }}
+  {{ partial "menu-hugo" .Site.Menus.before }}
 
-{{ if .Site.Params.NewDocsMenuBundle }}
-  {{ partial "menu-bundle" . }}
-{{ else }}
+  {{ if .Site.Params.NewDocsMenuBundle }}
+    {{ partial "menu-bundle" . }}
+    {{ else }}
+    {{ partial "menu-filetree" . }}
+  {{ end }}
   {{ partial "menu-filetree" . }}
-{{ end }}
-{{ partial "menu-filetree" . }}
 
-
-
-<!-- {{ partial "menu-hugo" .Site.Menus.main }} -->
-{{ partial "inject/menu-after" . }}
+  <!-- {{ partial "menu-hugo" .Site.Menus.main }} -->
+  {{ partial "inject/menu-after" . }}
 </nav>
 
 <!-- Restore menu position as soon as possible to avoid flickering -->
 <!-- {{ $script := resources.Get "menu-reset.js" | resources.Minify }} -->
 <!-- {{ with $script.Content }} -->
-  <!-- <script>{{ . | safeJS }}</script> -->
+<!-- <script>{{ . | safeJS }}</script> -->
 <!-- {{ end }} -->

@@ -1,23 +1,27 @@
 {{ $currentPage := . }}
 {{ range .Site.Menus.main }}
-    {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }} dropdown nav-item">
-            <a href="#">
-                {{ .Name }}
-            </a>
-            <ul class="dropdown-menu">
-                {{ range .Children }}
-                    <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }} nav-item">
-                        <a href="{{ .URL }}">{{ .Name }}</a>
-                    </li>
-                {{ end }}
-            </ul>
-        </li>
+  {{ if .HasChildren }}
+    <li
+      class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }} dropdown nav-item"
+    >
+      <a href="#">
+        {{ .Name }}
+      </a>
+      <ul class="dropdown-menu">
+        {{ range .Children }}
+          <li
+            class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }} nav-item"
+          >
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </li>
     {{ else }}
-        <li class="nav-item">
-            <a href="{{ .URL }}">
-                {{ .Name }}
-            </a>
-        </li>
-    {{ end }}
+    <li class="nav-item">
+      <a href="{{ .URL }}">
+        {{ .Name }}
+      </a>
+    </li>
+  {{ end }}
 {{ end }}

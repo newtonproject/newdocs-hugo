@@ -63,7 +63,7 @@ input.toggle {
 }
 
 .clearfix::after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -168,8 +168,7 @@ svg.icon {
 }
 
 .fix-backdrop-blur {
-  @media screen and (-webkit-min-device-pixel-ratio:0)
-  and (min-resolution:.001dpcm) {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
     backdrop-filter: unset;
   }
 }
@@ -184,7 +183,6 @@ svg.icon {
 .transparent {
   opacity: 0;
 }
-
 
 @mixin spin($duration) {
   animation: spin $duration ease infinite;
@@ -209,8 +207,6 @@ svg.icon {
   outline-color: -webkit-focus-ring-color;
 }
 
-
-
 .invertable {
   @media (prefers-color-scheme: dark) {
     filter: var(--icon-filter);
@@ -222,7 +218,7 @@ svg.icon {
 }
 
 .invert {
-  filter: brightness(0) invert(1)
+  filter: brightness(0) invert(1);
 }
 
 @mixin invert-on-dark {
