@@ -7,7 +7,11 @@
 
   <label for="toc-control">
     {{ if default true (default .Site.Params.NewDocsToC .Params.NewDocsToC) }}
-    <img src="{{ "svg/toc.svg" | relURL }}" class="newdocs-icon" alt="Table of Contents" />
+      <img
+        src="{{ "svg/toc.svg" | relURL }}"
+        class="newdocs-icon"
+        alt="Table of Contents"
+      />
     {{ end }}
   </label>
 </div>

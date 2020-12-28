@@ -1,5 +1,5 @@
-@import "defaults";
-@import "custom_variables";
+@import 'defaults';
+@import 'custom_variables';
 // @import "{{ default "auto" .Site.Params.NewDocsTheme }}";
 
 :root {
@@ -12,20 +12,20 @@
   }
 }
 
-@import "normalize";
-@import "utils";
-@import "main";
-@import "fonts";
-@import "fa/fontawesome.scss";
-@import "fa/solid.scss";
-@import "fa/brands.scss";
-@import "fa/regular.scss";
-@import "print";
+@import 'normalize';
+@import 'utils';
+@import 'main';
+@import 'fonts';
+@import 'fa/fontawesome.scss';
+@import 'fa/solid.scss';
+@import 'fa/brands.scss';
+@import 'fa/regular.scss';
+@import 'print';
 
-@import "markdown";
-@import "shortcodes";
+@import 'markdown';
+@import 'shortcodes';
 // @import "numbered";
-@import "scrollbars";
+@import 'scrollbars';
 
 // Custom defined styles
-@import "custom_style";
+@import 'custom_style';

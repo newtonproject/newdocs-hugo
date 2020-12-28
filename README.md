@@ -1,6 +1,6 @@
 # NewDocs Hugo Theme
 
-NewDocs makes it easy to create & edit a Project or Documentation website with Hugo, and deploy with GitHub or Netlify. 
+NewDocs makes it easy to create & edit a Project or Documentation website with Hugo, and deploy with GitHub or Netlify.
 
 ## Currently in Pre-release Beta
 
@@ -34,7 +34,9 @@ There are many ways to use this Theme, choose which one fits your project:
 
 **Option 1: The Traditional Hugo Way**
 
-```git submodule add https://github.com/newtonproject/newdocs-hugo.git themes/newdocs```
+```
+git submodule add https://github.com/newtonproject/newdocs-hugo.git themes/newdocs
+```
 
 **Option 2: Use from This Repo**
 
@@ -48,7 +50,7 @@ There are many ways to use this Theme, choose which one fits your project:
 
 Other open-source projects used in this Theme:
 
-- [Hugo](https://gohugo.io/) 
+- [Hugo](https://gohugo.io/)
 
 - [FlexSearch.js](https://github.com/nextapps-de/flexsearch) by Nextapps GmbH
 

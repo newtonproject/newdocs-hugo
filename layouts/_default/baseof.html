@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" dir={{ .Site.Language.LanguageDirection }}>
+<html
+  lang="{{ .Site.Language.Lang }}"
+  dir="{{ .Site.Language.LanguageDirection }}"
+>
+  <head>
+    {{ partial "html-head" . }}
+    {{ partial "inject/head" . }}
+  </head>
 
-<head>
-  {{ partial "html-head" . }}
-  {{ partial "inject/head" . }}
-</head>
+  <body dir="{{ .Site.Language.LanguageDirection }}" class="preload">
+    <input type="checkbox" class="hidden toggle" id="menu-control" />
 
-<body dir={{ .Site.Language.LanguageDirection }} class="preload">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-    
-  {{ template "nav" . }} 
-  
-  <main class="">
+    {{ template "nav" . }}
 
-    <div class="container">
-      {{ partial "breadcrumb" . }}
-    </div>
-    
-    <div class="container">
+    <main class="">
+      <div class="container">
+        {{ partial "breadcrumb" . }}
+      </div>
 
-      {{ template "aside-a" . }}
+      <div class="container">
+        {{ template "aside-a" . }}
 
-      {{ template "page-content" . }}
-  
-      {{ template "aside-b" . }}
-      
-    </div>
-  </main>
+        {{ template "page-content" . }}
 
-  {{ template "site-footer" . }}
+        {{ template "aside-b" . }}
+      </div>
+    </main>
 
-  {{ partial "inject/body" . }}
-</body>
+    {{ template "site-footer" . }}
 
+    {{ partial "inject/body" . }}
+  </body>
 </html>
 
 <!-- Aris start -->
@@ -43,13 +41,13 @@
 
 {{ define "aside-b" }}
   <aside id="aside-b">
-    {{ template "page-toc" . }} 
+    {{ template "page-toc" . }}
   </aside>
 {{ end }}
 
 {{ define "page-content" }}
   <div class="page-content">
-    {{ template "main" . }} 
+    {{ template "main" . }}
     {{ template "git-info" . }}
     {{ partial "nav-prev-next" . }}
   </div>
@@ -67,9 +65,9 @@
   {{ partial "header" . }}
 
   {{ if default true (default .Site.Params.NewDocsToC .Params.NewDocsToC) }}
-  <aside class="hidden clearfix">
-    {{ template "toc" . }}
-  </aside>
+    <aside class="hidden clearfix">
+      {{ template "toc" . }}
+    </aside>
   {{ end }}
 {{ end }}
 
@@ -87,16 +85,16 @@
 
 {{ define "comments" }}
   {{ if and .Content (default true (default .Site.Params.NewDocsComments .Params.NewDocsComments)) }}
-  <div class="newdocs-comments">
-    {{- partial "comments" . -}}
-  </div>
+    <div class="newdocs-comments">
+      {{- partial "comments" . -}}
+    </div>
   {{ end }}
 {{ end }}
 
 {{ define "main" }}
   <article class="markdown">
     <!-- <div class="body"> -->
-      {{- .Content -}}
+    {{- .Content -}}
     <!-- </div> -->
   </article>
 {{ end }}
@@ -110,12 +108,12 @@
     <input type="checkbox" class="hidden toggle" id="toc-control" />
     <label class="toggle" for="toc-control" id="toc-check">
       <h3>
-        {{ i18n "page-toc" }} 
-        <svg class='icon' id="toc-icon">
-          <use xlink:href='/icons/bootstrap-icons.svg#caret-down-fill'/>
+        {{ i18n "page-toc" }}
+        <svg class="icon" id="toc-icon">
+          <use xlink:href="/icons/bootstrap-icons.svg#caret-down-fill" />
         </svg>
       </h3>
     </label>
-    {{ template "toc" . }} 
+    {{ template "toc" . }}
   </section>
 {{ end }}

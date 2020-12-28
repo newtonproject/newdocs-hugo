@@ -1,5 +1,5 @@
 ---
-title: "{{ .Name | humanize | title }}"
+title: '{{ .Name | humanize | title }}'
 weight: 1
 # NewDocsFlatSection: false
 # NewDocsToC: true

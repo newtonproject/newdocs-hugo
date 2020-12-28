@@ -1,11 +1,9 @@
 .markdown {
-
   // {{< tabs >}}
   .newdocs-tabs {
     margin-top: $padding-16;
     margin-bottom: $padding-16;
-
-    border: $padding-1 solid var(--gray-200);
+    border: $padding-1 solid var(--fbg-300);
     border-radius: $border-radius;
 
     overflow: hidden;
@@ -15,26 +13,31 @@
 
     label {
       display: inline-block;
-      padding: $padding-8 $padding-16;
-      border-bottom: $padding-1 transparent;
+      padding: $as-xs $as-md;
+      margin: $as-xs;
+      background: transparent;
       cursor: pointer;
+      @extend .rounded-xs;
+      &:hover {
+        background: var(--fbg-300);
+      }
     }
 
     .newdocs-tabs-content {
       order: 999; //Move content blocks to the end
       width: 100%;
-      border-top: $padding-1 solid var(--gray-100);
+      border-top: $padding-1 solid var(--fbg-300);
       padding: $padding-16;
       display: none;
     }
 
-    input[type="radio"]:checked + label {
-      border-bottom: $padding-1 solid var(--color-link);
+    input[type='radio']:checked + label {
+      background: var(--fbg-500);
     }
-    input[type="radio"]:checked + label + .newdocs-tabs-content {
+    input[type='radio']:checked + label + .newdocs-tabs-content {
       display: block;
     }
-    input[type="radio"]:focus + label {
+    input[type='radio']:focus + label {
       @include outline;
     }
   }
@@ -71,8 +74,11 @@
   .newdocs-hint {
     @each $name, $color in $hint-colors {
       &.#{$name} {
-        border-color: $color;
+        border-color: rgba($color, 0.2);
         background-color: rgba($color, 0.2);
+        & a:link {
+          color: $color;
+        }
       }
     }
   }
@@ -89,7 +95,8 @@
         @extend .box-shadow;
         background: var(--fbg-200);
       }
-      h4, & p {
+      h4,
+      & p {
         margin: $as-xs 0;
       }
       p {
