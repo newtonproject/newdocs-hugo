@@ -1,12 +1,6 @@
 // Used in layout
-$padding-1: 1px !default;
-$padding-4: 0.25rem !default;
-$padding-8: 0.5rem !default;
-$padding-16: 1rem !default;
-$padding-32: 2rem !default;
-
 $as-1: 1px !default;
-$as-xxs: 0.2rem !default;
+$as-xxs: 0.25rem !default;
 $as-xs: 0.5rem !default;
 $as-sm: 0.75rem !default;
 $as-md: 1rem !default;
@@ -34,6 +28,7 @@ $navbar-item-height: $as-lg + $as-xs !default;
 
 $hint-colors: (
   info: #6bf,
+  success: #20c5a0,
   warning: #fc0,
   danger: #f66,
 ) !default;
