@@ -471,14 +471,19 @@ section.git-info {
   & * {
     color: var(--secondary);
   }
+  &:hover * {
+    color: var(--body-content);
+  }
+  &:hover .info > a {
+    text-decoration: underline;
+  }
   a {
     color: var(--secondary);
     &:hover,
     &:hover * {
-      color: var(--color-link);
+      color: var(--accent-2);
     }
   }
-
   @media (max-width: $mobile-breakpoint) {
     flex-direction: column;
   }
@@ -487,7 +492,7 @@ section.git-info {
   }
   .info {
     @media (min-width: $mobile-breakpoint) {
-      max-width: 75%;
+      max-width: 65%;
     }
   }
   .links {
@@ -497,13 +502,9 @@ section.git-info {
     }
     a {
       padding: $as-xxs $as-sm;
-      background: red;
-      @extend .rounded-xxs;
       background: var(--fbg-200);
-      &:hover {
-        background: var(--fbg-400);
-      }
       margin-right: $as-xs;
+      @extend .rounded-xxs;
       &:last-child {
         margin-right: unset;
       }
