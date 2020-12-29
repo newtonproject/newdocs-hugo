@@ -5,7 +5,6 @@ assets/fa
 assets/*.json
 layouts/_default/_markup
 layouts/partials/breadcrumb.html
-layouts/partials/git-info.html
 layouts/partials/social.html
 layouts/partials/menu-filetree.html
 layouts/partials/menu-hugo.html

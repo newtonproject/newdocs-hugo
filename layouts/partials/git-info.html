@@ -1,18 +1,44 @@
 {{ if and .GitInfo .Site.Params.NewDocsRepo }}
-<section class="git-info">
+  <section class="git-info">
     {{- $date := partial "date" (dict "Date" .GitInfo.AuthorDate.Local "Format" .Site.Params.NewDocsDateFormat) -}}
-    <a href="{{ .Site.Params.NewDocsRepo }}/commit/{{ .GitInfo.Hash }}" title='{{ i18n "Last modified by" }} {{ .GitInfo.AuthorName }} | {{ $date }}' target="_blank" rel="noopener">
-      <span>{{ i18n "Last modified by" }} {{ .GitInfo.AuthorName }} </span>
-    </a>
+    <div
+      class="item info"
+      title="{{ i18n "git-last-edited-by" }} {{ .GitInfo.AuthorName }} | {{ $date }} @{{ .GitInfo.AbbreviatedHash }}"
+    >
+      <strong>{{ .Page.Title }}</strong>
+      {{ i18n "git-last-edited-on" }} {{ $date }}
+      {{ if and .File .Site.Params.NewDocsRepo .Site.Params.NewDocsViewPath }}
+        <a
+          href="{{ .Site.Params.NewDocsRepo }}/commit/{{ .GitInfo.Hash }}"
+          title="{{ i18n "git-view-commit" }}"
+          target="_blank"
+          rel="noopener"
+          >@{{ .GitInfo.AbbreviatedHash }}</a
+        >
+      {{ end }}
+      : {{ .GitInfo.Subject }}
+    </div>
 
-    <a href="{{ .Site.Params.NewDocsRepo }}/commit/{{ .GitInfo.Hash }}" title='{{ i18n "Last modified by" }} {{ .GitInfo.AuthorName }} | {{ $date }}' target="_blank" rel="noopener">
-      <span>{{ i18n "Last modified on" }} {{ $date }} </span>
-    </a>
-{{ end }}
+    {{ if and .File .Site.Params.NewDocsRepo .Site.Params.NewDocsViewPath }}
+      <div class="item links">
+        <a
+          href="{{ .Site.Params.NewDocsRepo }}/{{ .Site.Params.NewDocsViewPath }}/{{ .Site.Params.contentDir }}/{{ replace .File.Path "\\" "/" }}"
+          target="_blank"
+          title="{{ .Page.Title }} {{ i18n "git-source" }}"
+          rel="noopener"
+          ><i class="fas fa-code"></i> {{ i18n "git-source" }}</a
+        >
 
-{{ if and .File .Site.Params.NewDocsRepo .Site.Params.NewDocsEditPath }}
-    <a href="{{ .Site.Params.NewDocsRepo }}/{{ .Site.Params.NewDocsEditPath }}/{{ .Site.Params.contentDir }}/{{ replace .File.Path "\\" "/" }}" target="_blank" rel="noopener">
-      <span>{{ i18n "Edit this page" }}</span>
-    </a>
-</section> 
+        {{ if and .File .Site.Params.NewDocsRepo .Site.Params.NewDocsEditPath }}
+          <a
+            href="{{ .Site.Params.NewDocsRepo }}/{{ .Site.Params.NewDocsEditPath }}/{{ .Site.Params.contentDir }}/{{ replace .File.Path "\\" "/" }}"
+            title="{{ i18n "git-edit" }} {{ .Page.Title }}"
+            target="_blank"
+            rel="noopener"
+            ><i class="fas fa-edit"></i> {{ i18n "git-edit" }}</a
+          >
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
 {{ end }}

@@ -1,6 +1,6 @@
 {
   "name": "newdocs-hugo",
-  "version": "0.7.1-beta",
+  "version": "0.8.0-beta",
   "description": "NewDocs makes it easy to create & edit a Project or Documentation website with Hugo.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
