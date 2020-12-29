@@ -35,6 +35,10 @@ h5 {
   font-weight: $body-font-weight;
 }
 
+strong {
+  font-weight: #{$strong-font-weight};
+}
+
 a,
 a:link {
   text-decoration: none;
@@ -672,7 +676,7 @@ footer#site-footer {
   h4 {
     color: var(--body-content);
     font-size: 1em;
-    font-weight: 500;
+    font-weight: #{$strong-font-weight};
     opacity: 0.75;
     margin: 0;
     padding: 0;
