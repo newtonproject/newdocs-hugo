@@ -417,8 +417,7 @@ section.menu {
   }
 }
 
-section.toc,
-section.git-info {
+section.toc {
   display: block;
   padding: $as-sm;
   font-size: $font-size-12;
@@ -465,13 +464,49 @@ section.git-info {
 
 section.git-info {
   display: flex;
+  padding: $as-sm 0;
   justify-content: space-between;
+  font-size: 0.875em;
+  border-top: solid var(--fbg-500) 1px;
+  & * {
+    color: var(--secondary);
+  }
+  a {
+    color: var(--secondary);
+    &:hover,
+    &:hover * {
+      color: var(--color-link);
+    }
+  }
+
   @media (max-width: $mobile-breakpoint) {
     flex-direction: column;
-    column-gap: 12px;
+  }
+  .item {
+    text-align: center;
+  }
+  .info {
+    @media (min-width: $mobile-breakpoint) {
+      max-width: 75%;
+    }
+  }
+  .links {
+    margin: $as-xxs 0;
+    @media (max-width: $mobile-breakpoint) {
+      padding-top: $as-sm;
+    }
     a {
-      text-align: center;
-      padding: $as-xs;
+      padding: $as-xxs $as-sm;
+      background: red;
+      @extend .rounded-xxs;
+      background: var(--fbg-200);
+      &:hover {
+        background: var(--fbg-400);
+      }
+      margin-right: $as-xs;
+      &:last-child {
+        margin-right: unset;
+      }
     }
   }
 }
