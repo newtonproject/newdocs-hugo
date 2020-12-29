@@ -161,22 +161,11 @@
     url('fonts/poppins-v15-latin-900italic.woff') format('woff');
 }
 
-/* source-code-pro-regular - latin */
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-    url('fonts/source-code-pro-v13-latin-500.woff2') format('woff2'),
-    url('fonts/source-code-pro-v13-latin-500.woff') format('woff');
-}
-
 body {
   font-family: 'Poppins', sans-serif;
 }
 
 pre,
 code {
-  font-family: 'Source Code Pro', monospace;
+  font-family: monospace;
 }
