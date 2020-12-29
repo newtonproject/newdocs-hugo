@@ -73,7 +73,7 @@
   // {{< details >}}
   details {
     margin: $as-sm 0;
-    border: $as-1 solid var(--fbg-200);
+    border: $as-1 solid var(--fbg-300);
     @extend .rounded-xs;
     overflow: hidden;
     // @extend .box-shadow;
@@ -88,7 +88,7 @@
 
     &[open] summary {
       margin-bottom: 0;
-      border-bottom: $as-1 solid var(--fbg-200);
+      border-bottom: $as-1 solid var(--fbg-300);
       background: unset;
     }
 
