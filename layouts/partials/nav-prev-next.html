@@ -1,20 +1,20 @@
 {{ if or .PrevInSection .NextInSection }}
-<div class="nav" id="nav-prev-next">
-  {{ if .PrevInSection }}
-    <a class="previous" href="{{ .PrevInSection.Permalink }}">
-      <div class="link">
-        <span>{{ i18n "prev-page" }} </span>
-        <h4>{{ .PrevInSection.Title }}</h4>
-      </div>
-    </a>
-  {{ end }}
-  {{ if .NextInSection }}
-    <a class="next" href="{{ .NextInSection.Permalink }}">
-      <div class="link">
-        <span>{{ i18n "next-page" }} </span>
-        <h4>{{ .NextInSection.Title }}</h4>
-      </div>
-    </a>
-  {{ end }}
-</div>
+  <div class="nav" id="nav-prev-next">
+    {{ if .PrevInSection }}
+      <a class="previous" href="{{ .PrevInSection.Permalink }}">
+        <div class="link">
+          <span>{{ i18n "prev-page" }} </span>
+          <h4>{{ .PrevInSection.Title }}</h4>
+        </div>
+      </a>
+    {{ end }}
+    {{ if .NextInSection }}
+      <a class="next" href="{{ .NextInSection.Permalink }}">
+        <div class="link">
+          <span>{{ i18n "next-page" }} </span>
+          <h4>{{ .NextInSection.Title }}</h4>
+        </div>
+      </a>
+    {{ end }}
+  </div>
 {{ end }}
