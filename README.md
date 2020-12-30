@@ -14,6 +14,8 @@ Before that use carefully since:
 
 - Documentation may not be fully covered
 
+To learn more about **Plans & Roadmap** to this project, see [Issue #29: What is NewDocs Hugo theme?](https://github.com/newtonproject/newdocs-hugo/issues/29). Discussions are welcome under that issue.
+
 ## Get Started
 
 ### Requirement
