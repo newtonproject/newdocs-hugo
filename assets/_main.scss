@@ -35,6 +35,10 @@ h5 {
   font-weight: $body-font-weight;
 }
 
+strong {
+  font-weight: #{$strong-font-weight};
+}
+
 a,
 a:link {
   text-decoration: none;
@@ -471,14 +475,19 @@ section.git-info {
   & * {
     color: var(--secondary);
   }
+  &:hover * {
+    color: var(--body-content);
+  }
+  &:hover .info > a {
+    text-decoration: underline;
+  }
   a {
     color: var(--secondary);
     &:hover,
     &:hover * {
-      color: var(--color-link);
+      color: var(--accent-2);
     }
   }
-
   @media (max-width: $mobile-breakpoint) {
     flex-direction: column;
   }
@@ -487,7 +496,7 @@ section.git-info {
   }
   .info {
     @media (min-width: $mobile-breakpoint) {
-      max-width: 75%;
+      max-width: 65%;
     }
   }
   .links {
@@ -497,13 +506,9 @@ section.git-info {
     }
     a {
       padding: $as-xxs $as-sm;
-      background: red;
-      @extend .rounded-xxs;
       background: var(--fbg-200);
-      &:hover {
-        background: var(--fbg-400);
-      }
       margin-right: $as-xs;
+      @extend .rounded-xxs;
       &:last-child {
         margin-right: unset;
       }
@@ -586,98 +591,5 @@ footer#site-footer {
     row {
       width: 100%;
     }
-  }
-}
-
-#breadcrumb {
-  padding: $as-sm $as-sm 0 $as-sm;
-  width: 100%;
-  @media (max-width: $mobile-breakpoint) {
-    padding: $as-md 0 0 0;
-  }
-  span {
-    @media (max-width: $mobile-breakpoint) {
-      font-size: $font-size-12;
-    }
-    a {
-      color: var(--body-content);
-      opacity: 0.75;
-    }
-    &:before {
-      content: '/';
-      opacity: 0.2;
-      margin: auto $as-xxs;
-    }
-    &:first-child::before {
-      content: '';
-      margin: unset;
-    }
-    &.active a {
-      opacity: 0.5;
-    }
-    &:hover a {
-      text-decoration: underline;
-      opacity: unset;
-    }
-    &:hover::before {
-      opacity: 0.75;
-    }
-  }
-  * a {
-    @extend .transition-color;
-  }
-}
-
-#nav-prev-next {
-  margin-top: $as-md;
-  display: flex;
-  flex-direction: row;
-  .previous,
-  .next {
-    flex: 1 1;
-    border: solid 1px var(--fbg-200);
-    padding: $as-sm;
-    @extend .rounded-xs;
-    @media (max-width: $mobile-breakpoint) {
-      padding: $as-xs;
-    }
-    &:hover {
-      @extend .box-shadow;
-      span {
-        color: var(--accent-2);
-      }
-      h4 {
-        opacity: unset;
-      }
-    }
-  }
-  a {
-    margin: 0 $as-xs;
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  .next {
-    text-align: right;
-  }
-  span {
-    font-size: 0.9em;
-    color: var(--secondary);
-    line-height: 1.7em;
-  }
-  h4 {
-    color: var(--body-content);
-    font-size: 1em;
-    font-weight: 500;
-    opacity: 0.75;
-    margin: 0;
-    padding: 0;
-    padding-top: $as-xs;
-  }
-  .link {
-    margin: $as-xxs;
   }
 }

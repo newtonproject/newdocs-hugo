@@ -1,0 +1,38 @@
+#breadcrumb {
+  padding: $as-sm $as-sm 0 $as-sm;
+  width: 100%;
+  @media (max-width: $mobile-breakpoint) {
+    padding: $as-md 0 0 0;
+  }
+  span {
+    @media (max-width: $mobile-breakpoint) {
+      font-size: $font-size-12;
+    }
+    a {
+      color: var(--body-content);
+      opacity: 0.75;
+    }
+    &:before {
+      content: '/';
+      opacity: 0.2;
+      margin: auto $as-xxs;
+    }
+    &:first-child::before {
+      content: '';
+      margin: unset;
+    }
+    &.active a {
+      opacity: 0.5;
+    }
+    &:hover a {
+      text-decoration: underline;
+      opacity: unset;
+    }
+    &:hover::before {
+      opacity: 0.75;
+    }
+  }
+  * a {
+    @extend .transition-color;
+  }
+}

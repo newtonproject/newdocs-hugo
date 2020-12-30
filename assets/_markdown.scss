@@ -26,7 +26,7 @@
   h4,
   h5,
   h6 {
-    font-weight: 500;
+    font-weight: #{$strong-font-weight};
     line-height: 1;
     margin-top: 1.5em;
     margin-bottom: $as-md;
@@ -63,7 +63,7 @@
   b,
   optgroup,
   strong {
-    font-weight: bold;
+    font-weight: #{$strong-font-weight};
   }
 
   a {
@@ -104,10 +104,10 @@
 
   pre {
     padding: $as-md;
-    border-radius: $border-radius;
     overflow-x: auto;
     font-size: 0.875em;
     margin: 0;
+    @extend .rounded-xs;
     @media (prefers-color-scheme: light) {
       background: #{$color-deep} !important;
       color: white;
@@ -161,7 +161,7 @@
         &,
         strong,
         & th {
-          font-weight: 500;
+          font-weight: #{$strong-font-weight};
         }
         th {
           text-align: left;
@@ -169,10 +169,12 @@
       }
     }
 
-    tr th,
+    tr th {
+      padding: $as-sm $as-sm;
+    }
+
     tr td {
       padding: $as-xs $as-sm;
-      // border: 1px solid var(--fbg-300);
     }
 
     tr {
@@ -183,6 +185,7 @@
 
       td {
         border-bottom: solid 1px var(--fbg-300);
+        // border-left: solid 1px var(--fbg-300);
         &:first-child {
           border-left: solid 1px var(--fbg-300);
         }
@@ -287,8 +290,8 @@
   }
 
   .highlight {
-    border-radius: $border-radius;
     overflow: hidden;
+    @extend .rounded-xs;
     & > div {
       @media (prefers-color-scheme: light) {
         background-color: #{$color-deep} !important;

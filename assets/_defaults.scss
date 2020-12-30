@@ -1,4 +1,12 @@
-// Used in layout
+// Font Size
+$font-size-base: 16px !default;
+$font-size-12: 0.75rem !default;
+$font-size-14: 0.875rem !default;
+$font-size-16: 1rem !default;
+$body-font-weight: normal !default;
+$strong-font-weight: 600 !default;
+
+// General Size
 $as-1: 1px !default;
 $as-xxs: 0.25rem !default;
 $as-xs: 0.5rem !default;
@@ -7,31 +15,13 @@ $as-md: 1rem !default;
 $as-lg: 2rem !default;
 $as-xl: 3rem !default;
 
-$font-size-base: 16px !default;
-$font-size-12: 0.75rem !default;
-$font-size-14: 0.875rem !default;
-$font-size-16: 1rem !default;
-
-$border-radius: $as-xs !default;
-
-$body-font-weight: normal !default;
-
+// Layout Size
 $body-min-width: 20rem !default;
 $container-max-width: 78rem !default;
-
 $header-height: 3.5rem !default;
 $aside-width: 14rem !default;
-
 $mobile-breakpoint: $aside-width + $body-min-width * 1.2 + $aside-width !default;
-
 $navbar-item-height: $as-lg + $as-xs !default;
-
-$hint-colors: (
-  info: #6bf,
-  success: #20c5a0,
-  warning: #fc0,
-  danger: #f66,
-) !default;
 
 // Color
 $color-primary: #15202b;
@@ -56,6 +46,12 @@ $color-green: #20c5a0;
 $color-blue: #11a1f1;
 $color-red: #ff5949;
 $color-orange: #ff9500;
+$hint-colors: (
+  info: #6bf,
+  success: #20c5a0,
+  warning: #fc0,
+  danger: #f66,
+) !default;
 
 // Themes
 @mixin theme-light {
@@ -67,7 +63,7 @@ $color-orange: #ff9500;
   --main-body: var(--main-content-invert);
   --primary: #15202b;
   --on-primary: var(--main-content-invert);
-  --secondary: #3e4c56;
+  --secondary: #7f8d97;
   --on-secondary: var(--main-content-invert);
   --accent: #11a1f1;
   --accent-hover: #{$color-accent-deeper};
@@ -121,7 +117,7 @@ $color-orange: #ff9500;
   --main-body: var(--main-content-invert);
   --primary: #15202b;
   --on-primary: var(--main-content-invert);
-  --secondary: #525a5f;
+  --secondary: #646e79;
   --on-secondary: var(--main-content-invert);
   --accent: #11a1f1;
   --accent-hover: #{$color-accent-lighter};
