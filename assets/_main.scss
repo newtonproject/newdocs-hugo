@@ -443,11 +443,11 @@ section.toc {
     display: block;
   }
   @media (max-width: $mobile-breakpoint) {
-    &:not(:checked) ~ nav#TableOfContents {
+    &:not(:checked) ~ nav {
       height: 0;
       overflow: hidden;
     }
-    &:checked ~ nav#TableOfContents {
+    &:checked ~ nav {
       height: inherit;
       overflow-y: auto;
     }
@@ -593,3 +593,26 @@ footer#site-footer {
     }
   }
 }
+
+article.list {
+  padding: $as-sm;
+  margin-bottom: $as-sm;
+  border: solid 1px var(--fbg-300);
+  &:hover {
+    @extend .box-shadow;
+  }
+  @extend .rounded-sm;
+  h3 {
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    opacity: 0.75;
+    margin: 0;
+  }
+  .post-meta .taxonomies {
+    display: none;
+  }
+}
+
+
