@@ -1,0 +1,28 @@
+.post-meta {
+  font-size: small;
+  .date-authors {
+    line-height: $as-lg;
+    padding: $as-xs 0;
+    &,
+    & * {
+      color: var(--secondary);
+      & * a:link {
+        text-decoration: underline;
+      }
+    }
+    .date {
+      margin-right: $as-sm;
+    }
+  }
+  .taxonomies {
+    a {
+      margin-right: $as-xs;
+      padding: $as-xxs $as-xs;
+      background: var(--fbg-200);
+      @extend .rounded-xs;
+      &:hover {
+        background: var(--fbg-400);
+      }
+    }
+  }
+}
