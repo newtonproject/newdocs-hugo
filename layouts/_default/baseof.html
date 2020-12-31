@@ -9,23 +9,9 @@
   </head>
 
   <body dir="{{ .Site.Language.LanguageDirection }}" class="preload">
-    <input type="checkbox" class="hidden toggle" id="menu-control" />
+    {{ template "navbar" . }}
 
-    {{ template "nav" . }}
-
-    <main class="">
-      <div class="container">
-        {{ partial "breadcrumb" . }}
-      </div>
-
-      <div class="container">
-        {{ template "aside-a" . }}
-
-        {{ template "page-content" . }}
-
-        {{ template "aside-b" . }}
-      </div>
-    </main>
+    {{ template "main" . }}
 
     {{ template "site-footer" . }}
 
@@ -35,9 +21,25 @@
 
 <!-- Aris start -->
 
-{{ define "nav" }}
-  {{ partial "nav" . }}
+{{ define "navbar" }}
+  {{ partial "navbar" . }}
 {{ end }}
+
+{{ define "main" }}
+  <main class="">
+    <div class="container">
+      {{ partial "breadcrumb" . }}
+    </div>
+
+    <div class="container">
+      {{ template "aside-a" . }}
+      {{ template "page-content" . }}
+      {{ template "aside-b" . }}
+    </div>
+  </main>
+{{ end }}
+
+{{ define "aside-a" }}{{ end }}
 
 {{ define "aside-b" }}
   <aside id="aside-b">
@@ -47,13 +49,11 @@
 
 {{ define "page-content" }}
   <div class="page-content">
-    {{ template "main" . }}
+    {{ template "main-content" . }}
     {{ template "git-info" . }}
     {{ partial "nav-prev-next" . }}
   </div>
 {{ end }}
-
-{{ define "aside-a" }}{{ end }}
 
 <!-- Aris end -->
 
@@ -91,9 +91,11 @@
   {{ end }}
 {{ end }}
 
-{{ define "main" }}
+{{ define "main-content" }}
   <article class="markdown">
     <!-- <div class="body"> -->
+    <h1>{{ .Title }}</h1>
+    {{ partial "post-meta" . }}
     {{- .Content -}}
     <!-- </div> -->
   </article>
