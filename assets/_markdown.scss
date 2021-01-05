@@ -135,9 +135,9 @@
 
   blockquote {
     margin: $as-md 0;
-    padding: $as-xs $as-md $as-xs ($as-md - $as-xxs); //to keep total left space 16dp
-    border: 1px solid var(--fbg-200);
-    @extend .rounded-xs;
+    padding: $as-sm $as-md $as-sm ($as-md - $as-xxs); //to keep total left space 16dp
+    border-left: $as-xs solid var(--fbg-500);
+    background: var(--fbg-200);
 
     :first-child {
       margin-top: 0;
