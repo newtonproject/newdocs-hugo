@@ -27,7 +27,7 @@
   h5,
   h6 {
     font-weight: #{$strong-font-weight};
-    line-height: 1;
+    line-height: 1.25;
     margin-top: 1.5em;
     margin-bottom: $as-md;
     padding-bottom: 0.5rem;
@@ -135,10 +135,13 @@
 
   blockquote {
     margin: $as-md 0;
-    padding: $as-sm $as-md $as-sm ($as-md - $as-xxs); //to keep total left space 16dp
+    padding: $as-sm $as-md $as-sm ($as-md - $as-xs);
     border-left: $as-xs solid var(--fbg-500);
-    background: var(--fbg-200);
-
+    background: var(--fbg-100);
+    &:hover {
+      border-color: var(--secondary);
+      background: var(--fbg-200);
+    }
     :first-child {
       margin-top: 0;
     }
