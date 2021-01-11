@@ -6,7 +6,7 @@
       </h3>
       {{ partial "post-meta" . }}
       <p>
-        {{- .Summary -}}
+        {{ default .Summary .Description }}
         {{ if .Truncated }}
           <a href="{{ .RelPermalink }}">...</a>
         {{ end }}

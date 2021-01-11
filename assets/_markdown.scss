@@ -27,7 +27,7 @@
   h5,
   h6 {
     font-weight: #{$strong-font-weight};
-    line-height: 1;
+    line-height: 1.25;
     margin-top: 1.5em;
     margin-bottom: $as-md;
     padding-bottom: 0.5rem;
@@ -112,10 +112,9 @@
     font-size: 0.875em;
     margin: 0;
     @extend .rounded-xs;
-    @media (prefers-color-scheme: light) {
-      background: #{$color-deep} !important;
-      color: white;
-    }
+    // light theme
+    background: #{$color-deep} !important;
+    color: white;
     @media (prefers-color-scheme: dark) {
       background: var(--pre-bg) !important;
     }
@@ -135,10 +134,13 @@
 
   blockquote {
     margin: $as-md 0;
-    padding: $as-xs $as-md $as-xs ($as-md - $as-xxs); //to keep total left space 16dp
-    border: 1px solid var(--fbg-200);
-    @extend .rounded-xs;
-
+    padding: $as-sm $as-md $as-sm ($as-md - $as-xxs);
+    border-left: $as-xs solid var(--fbg-500);
+    background: var(--fbg-100);
+    &:hover {
+      border-color: var(--secondary);
+      background: var(--fbg-200);
+    }
     :first-child {
       margin-top: 0;
     }
@@ -239,14 +241,13 @@
     margin-top: $as-lg;
     width: 60%;
     height: 1px;
-    @media (prefers-color-scheme: light) {
-      background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0)
-      );
-    }
+    // light theme
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
+    );
     @media (prefers-color-scheme: dark) {
       background-image: linear-gradient(
         to right,
@@ -297,9 +298,8 @@
     overflow: hidden;
     @extend .rounded-xs;
     & > div {
-      @media (prefers-color-scheme: light) {
-        background-color: #{$color-deep} !important;
-      }
+      // light theme
+      background-color: #{$color-deep} !important;
       @media (prefers-color-scheme: dark) {
         background-color: var(--pre-bg) !important;
       }
