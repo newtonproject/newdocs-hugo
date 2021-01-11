@@ -23,7 +23,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 
-  @extend .force-break-long-word;
+
+  p, p a, ul, blockquote {
+    @extend .force-break-long-word;
+  }
 
   * {
     @extend .transition-color;
