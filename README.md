@@ -64,6 +64,6 @@ Other open-source projects used in this Theme:
 
 - [Poppins Fonts](https://github.com/itfoundry/poppins) by Indian Type Foundry
 
-- [Font Awesome](https://fontawesome.com)
+- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
 - [Bootstrap Icons](https://icons.getbootstrap.com)
