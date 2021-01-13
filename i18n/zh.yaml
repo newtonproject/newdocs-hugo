@@ -17,7 +17,7 @@
   translation: 源文件
 
 - id: git-edit
-  translation: 修改
+  translation: 编辑
 
 - id: Expand
   translation: 展开
@@ -41,7 +41,7 @@
   translation: NewDocs Theme
 
 - id: footer-cpr
-  translation: © 2020 NewDocs 和其他贡献者
+  translation: © 2021 NewDocs 和其他贡献者
 
 - id: newdocsSearchConfig
   translation: |
