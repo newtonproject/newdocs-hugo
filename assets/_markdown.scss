@@ -97,10 +97,10 @@
   }
 
   code {
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0.2rem;
     background: var(--fbg-500);
-    border-radius: 0.25rem;
     font-size: 0.875em;
+    @extend .rounded-xxs;
   }
 
   & > .body > pre {
@@ -115,6 +115,8 @@
     overflow-x: auto;
     font-size: 0.875em;
     margin: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
     @extend .rounded-xs;
     // light theme
     background: #{$color-deep} !important;
@@ -300,8 +302,14 @@
   }
 
   .highlight {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
     overflow: hidden;
     @extend .rounded-xs;
+    pre {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
     & > div {
       // light theme
       background-color: #{$color-deep} !important;
