@@ -132,8 +132,9 @@
   }
 
   .mermaid {
-    background: white;
-    border-radius: $as-sm;
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
   }
 
   blockquote {
