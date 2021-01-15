@@ -15,6 +15,16 @@ $as-md: 1rem !default;
 $as-lg: 2rem !default;
 $as-xl: 3rem !default;
 
+$as-sizes: (
+  1: 1px,
+  xxs: 0.25rem,
+  xs: 0.5rem,
+  sm: 0.75rem,
+  md: 1rem,
+  lg: 2rem,
+  xl: 3rem,
+) !default;
+
 // Layout Size
 $body-min-width: 20rem !default;
 $container-max-width: 78rem !default;
@@ -36,21 +46,24 @@ $color-accent-deeper: #1184c5;
 $color-accent-2: #20c5a0;
 $color-accent-2-lighter: #36caa9;
 $color-accent-2-deeper: #179177;
+$color-hightlight: rgb(255, 0, 119);
 $color-bg: #fbfafc;
 $color-text: #000000;
-$color-success: #1f2221;
-$color-warning: #ff9500;
-$color-error: #ff5949;
-$color-info: #b1bac1;
 $color-green: #20c5a0;
 $color-blue: #11a1f1;
 $color-red: #ff5949;
 $color-orange: #ff9500;
+
+$color-info: #b1bac1;
+$color-success: $color-green;
+$color-warning: $color-orange;
+$color-error: $color-red;
+
 $hint-colors: (
-  info: #6bf,
-  success: #20c5a0,
-  warning: #fc0,
-  danger: #f66,
+  info: $color-blue,
+  success: $color-success,
+  warning: $color-warning,
+  danger: $color-error,
 ) !default;
 
 // Themes

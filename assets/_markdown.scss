@@ -30,11 +30,11 @@
   h4,
   h5,
   h6 {
-    font-weight: #{$strong-font-weight};
+    font-weight: 400;
     line-height: 1.25;
     margin-top: 1.5em;
     margin-bottom: $as-md;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2em;
 
     a.anchor {
       opacity: 0;
@@ -57,15 +57,7 @@
   h4,
   h5,
   h6 {
-    font-weight: 600;
-  }
-
-  h5 {
-    font-size: 0.875em;
-  }
-
-  h6 {
-    font-size: 0.75em;
+    font-weight: 500;
   }
 
   b,
@@ -97,10 +89,11 @@
   }
 
   code {
-    padding: 0.1rem 0.5rem;
-    background: var(--fbg-500);
-    border-radius: 0.25rem;
+    padding: 0.2rem;
+    background: var(--fbg-200);
     font-size: 0.875em;
+    color: $color-hightlight;
+    @extend .rounded-xxs;
   }
 
   & > .body > pre {
@@ -115,6 +108,8 @@
     overflow-x: auto;
     font-size: 0.875em;
     margin: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
     @extend .rounded-xs;
     // light theme
     background: #{$color-deep} !important;
@@ -132,8 +127,9 @@
   }
 
   .mermaid {
-    background: white;
-    border-radius: $as-sm;
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
   }
 
   blockquote {
@@ -299,8 +295,14 @@
   }
 
   .highlight {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
     overflow: hidden;
     @extend .rounded-xs;
+    pre {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
     & > div {
       // light theme
       background-color: #{$color-deep} !important;
