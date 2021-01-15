@@ -34,7 +34,7 @@
     line-height: 1.25;
     margin-top: 1.5em;
     margin-bottom: $as-md;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2em;
 
     a.anchor {
       opacity: 0;
@@ -58,14 +58,6 @@
   h5,
   h6 {
     font-weight: 500;
-  }
-
-  h5 {
-    font-size: 0.875em;
-  }
-
-  h6 {
-    font-size: 0.75em;
   }
 
   b,
@@ -97,9 +89,10 @@
   }
 
   code {
-    padding: 0.1rem 0.2rem;
-    background: var(--fbg-500);
+    padding: 0.2rem;
+    background: var(--fbg-200);
     font-size: 0.875em;
+    color: $color-hightlight;
     @extend .rounded-xxs;
   }
 
