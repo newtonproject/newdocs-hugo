@@ -50,19 +50,19 @@ h1 {
 h2 {
   font-size: 1.7rem;
   @media (max-width: $mobile-breakpoint) {
-    font-size: calc(1.325rem + .9vw);
+    font-size: calc(1.325rem + 0.9vw);
   }
 }
 h3 {
   font-size: 1.4rem;
   @media (max-width: $mobile-breakpoint) {
-    font-size: calc(1.3rem + .6vw);
+    font-size: calc(1.3rem + 0.6vw);
   }
 }
 h4 {
   font-size: 1.2rem;
   @media (max-width: $mobile-breakpoint) {
-    font-size: calc(1.275rem + .3vw);
+    font-size: calc(1.275rem + 0.3vw);
   }
 }
 h5 {

@@ -97,20 +97,20 @@ $hint-colors: (
   --highlight-neutral: black;
   --highlight-neutral-rgb: 22, 33, 44;
   // Named Color
-  --hint-color-green: #20c5a0;
-  --hint-color-blue: #11a1f1;
-  --hint-color-red: #ff5949;
-  --hint-color-orange: #ff9500;
+  --color-green: #20c5a0;
+  --color-blue: #11a1f1;
+  --color-red: #ff5949;
+  --color-orange: #ff9500;
   --gray-100: rgba(0, 0, 0, 0.1);
   --gray-200: rgba(0, 0, 0, 0.2);
   --gray-300: rgba(0, 0, 0, 0.3);
   --gray-500: rgba(0, 0, 0, 0.5);
   // Hint Color
-  --hint-color-info: #6bf;
-  --hint-color-danger: var(--hint-color-red);
-  --hint-color-success: var(--hint-color-green);
-  --hint-color-warning: var(--hint-color-orange);
-  --hint-color-error: var(--hint-color-red);
+  --color-info: #6bf;
+  --color-danger: var(--color-red);
+  --color-success: var(--color-green);
+  --color-warning: var(--color-orange);
+  --color-error: var(--color-red);
   // Tools
   --icon-filter: none;
   --pre-bg: #{$color-light};
@@ -153,20 +153,20 @@ $hint-colors: (
   --highlight-neutral: white;
   --highlight-neutral-rgb: 255, 255, 255;
   // Named Color
-  --hint-color-green: #20c5a0;
-  --hint-color-blue: #11a1f1;
-  --hint-color-red: #ff5949;
-  --hint-color-orange: #ff9500;
+  --color-green: #20c5a0;
+  --color-blue: #11a1f1;
+  --color-red: #ff5949;
+  --color-orange: #ff9500;
   --gray-100: rgba(255, 255, 255, 0.1);
   --gray-200: rgba(255, 255, 255, 0.2);
   --gray-300: rgba(255, 255, 255, 0.3);
   --gray-500: rgba(255, 255, 255, 0.5);
   // Hint Color
-  --hint-color-info: #6bf;
-  --hint-color-danger: var(--hint-color-red);
-  --hint-color-success: var(--hint-color-green);
-  --hint-color-warning: var(--hint-color-orange);
-  --hint-color-error: var(--hint-color-red);
+  --color-info: #6bf;
+  --color-danger: var(--color-red);
+  --color-success: var(--color-green);
+  --color-warning: var(--color-orange);
+  --color-error: var(--color-red);
   // Tools
   --icon-filter: brightness(0) invert(1);
   --pre-bg: hsl(207, 20%, 12%);

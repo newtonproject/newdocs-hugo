@@ -237,7 +237,7 @@ svg.icon {
 }
 
 .invert {
-  filter: brightness(0) invert(1);
+  filter: invert(1);
 }
 
 @mixin invert-on-dark {
