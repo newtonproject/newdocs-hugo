@@ -1,0 +1,107 @@
+/* Animations */
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  &.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+}
+
+@-webkit-keyframes rotate2d {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate2d {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotate2d {
+  -webkit-animation: rotate2d 2s linear infinite;
+  animation: rotate2d 1s linear infinite;
+}
+
+@-webkit-keyframes rotate3d {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate3d {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+.rotate3d {
+  -webkit-animation: rotate3d 2s linear infinite;
+  animation: rotate3d 1s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+.bounce {
+  -webkit-animation: bounce 2s linear infinite;
+  animation: bounce 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+}

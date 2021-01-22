@@ -43,18 +43,33 @@ h3 {
 
 h1 {
   font-size: 1.9rem;
+  @media (max-width: $mobile-breakpoint) {
+    font-size: calc(1.425rem + 2.1vw);
+  }
 }
 h2 {
   font-size: 1.7rem;
+  @media (max-width: $mobile-breakpoint) {
+    font-size: calc(1.325rem + 0.9vw);
+  }
 }
 h3 {
   font-size: 1.4rem;
+  @media (max-width: $mobile-breakpoint) {
+    font-size: calc(1.3rem + 0.6vw);
+  }
 }
 h4 {
   font-size: 1.2rem;
+  @media (max-width: $mobile-breakpoint) {
+    font-size: calc(1.275rem + 0.3vw);
+  }
 }
 h5 {
   font-size: 1.1rem;
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 1.25rem;
+  }
 }
 h6 {
   font-size: 1rem;
@@ -365,6 +380,7 @@ main {
       line-height: 1.5em;
       margin: $as-sm;
       h4 {
+        font-size: $font-size-14;
         font-weight: 600;
         margin: 0;
       }

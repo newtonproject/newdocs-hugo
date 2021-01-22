@@ -1,0 +1,123 @@
+.btn {
+  cursor: pointer;
+  position: relative;
+  padding: $as-sm $as-md;
+  color: white;
+  overflow: hidden;
+  border-radius: $as-xs;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  background-color: var(--color-link);
+  border-width: 0;
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    z-index: 1;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba($color: #ffffff, $alpha: 0.15);
+    border-radius: 100px;
+  }
+  &:hover {
+    &:before {
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+      border-radius: 1px;
+    }
+  }
+  &-outline {
+    background: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-link);
+    color: var(--color-link);
+    padding: calc(#{$as-sm} - 1px) calc(#{$as-md} - 1px);
+    &:before {
+      background: rgba($color: $color-accent, $alpha: 0.1);
+    }
+  }
+
+  &-sm {
+    padding: $as-xs $as-sm;
+    border-radius: $as-xs;
+    &.btn-outline {
+      border: 1px solid var(--color-link);
+      padding: calc(#{$as-xs} - 1px) calc(#{$as-sm} - 1px);
+    }
+  }
+  &-lg {
+    font-size: larger;
+    font-weight: 500;
+    padding: $as-md $as-lg;
+    border-radius: $as-sm;
+  }
+
+  &-primary {
+    background-color: var(--body-content);
+    color: var(--body-background);
+    &.btn-outline {
+      background: none;
+      border-color: var(--body-content);
+      color: var(--body-content);
+    }
+  }
+
+  &-success,
+  &-green {
+    background-color: var(--color-success);
+    color: white;
+    &.btn-outline {
+      background: none;
+      border-color: var(--color-success);
+      color: var(--color-success);
+      &:before {
+        background: rgba($color: $color-success, $alpha: 0.1);
+      }
+    }
+  }
+  &-danger,
+  &-red,
+  &-error,
+  &-alert {
+    background-color: var(--color-danger);
+    color: white;
+    &.btn-outline {
+      background: none;
+      border-color: var(--color-danger);
+      color: var(--color-danger);
+      &:before {
+        background: rgba($color: $color-error, $alpha: 0.1);
+      }
+    }
+  }
+  &-warning,
+  &-orange {
+    background-color: var(--color-warning);
+    color: white;
+    &.btn-outline {
+      background: none;
+      border-color: var(--color-warning);
+      color: var(--color-warning);
+      &:before {
+        background: rgba($color: $color-warning, $alpha: 0.1);
+      }
+    }
+  }
+  &.disabled {
+    pointer-events: none;
+  }
+}
